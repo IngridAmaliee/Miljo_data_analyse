@@ -1,0 +1,2245 @@
+<weatherdata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.api.met.no/schemas/weatherapi-0.4.xsd" created="2025-03-11T14:07:01Z">
+  <meta>
+    <model name="met_public_forecast" termin="2025-03-11T13:00:00Z" runended="2025-03-11T13:28:14Z" nextrun="2025-03-11T14:28:14Z" from="2025-03-11T14:00:00Z" to="2025-03-21T12:00:00Z"></model>
+  </meta>
+  <product class="pointData">
+    <time datatype="forecast" from="2025-03-11T14:00:00Z" to="2025-03-11T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.2"></temperature>
+        <windDirection id="dd" deg="65.2" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.0"></windGust>
+        <humidity unit="percent" value="75.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.6"></pressure>
+        <cloudiness id="NN" percent="99.9"></cloudiness>
+        <fog id="FOG" percent="0.7"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.0"></mediumClouds>
+        <highClouds id="HIGH" percent="37.5"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.8"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T13:00:00Z" to="2025-03-11T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.0" maxvalue="0.2"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T15:00:00Z" to="2025-03-11T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.2"></temperature>
+        <windDirection id="dd" deg="57.0" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.0"></windGust>
+        <humidity unit="percent" value="76.4"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.5"></pressure>
+        <cloudiness id="NN" percent="99.9"></cloudiness>
+        <fog id="FOG" percent="0.7"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.5"></mediumClouds>
+        <highClouds id="HIGH" percent="40.3"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T14:00:00Z" to="2025-03-11T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.0" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T16:00:00Z" to="2025-03-11T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.1"></temperature>
+        <windDirection id="dd" deg="52.7" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.9"></windGust>
+        <humidity unit="percent" value="77.7"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.4"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.7"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.7"></mediumClouds>
+        <highClouds id="HIGH" percent="52.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T15:00:00Z" to="2025-03-11T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T17:00:00Z" to="2025-03-11T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.9"></temperature>
+        <windDirection id="dd" deg="48.1" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.8" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.1"></windGust>
+        <humidity unit="percent" value="79.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.3"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.8"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.1"></mediumClouds>
+        <highClouds id="HIGH" percent="70.8"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T16:00:00Z" to="2025-03-11T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T18:00:00Z" to="2025-03-11T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.7"></temperature>
+        <windDirection id="dd" deg="40.4" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.2" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.8"></windGust>
+        <humidity unit="percent" value="81.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.3"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.7"></fog>
+        <lowClouds id="LOW" percent="99.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.1"></mediumClouds>
+        <highClouds id="HIGH" percent="82.3"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.1"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T17:00:00Z" to="2025-03-11T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T12:00:00Z" to="2025-03-11T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <minTemperature id="TTT" unit="celsius" value="0.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.2"></maxTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T19:00:00Z" to="2025-03-11T19:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.6"></temperature>
+        <windDirection id="dd" deg="41.3" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.6" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="6.4"></windGust>
+        <humidity unit="percent" value="82.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.3"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.7"></fog>
+        <lowClouds id="LOW" percent="99.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.8"></mediumClouds>
+        <highClouds id="HIGH" percent="97.4"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.2"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T18:00:00Z" to="2025-03-11T19:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T13:00:00Z" to="2025-03-11T19:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.1" minvalue="0.5" maxvalue="1.5"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.6"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.2"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T20:00:00Z" to="2025-03-11T20:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.5"></temperature>
+        <windDirection id="dd" deg="39.0" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.1" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="7.4"></windGust>
+        <humidity unit="percent" value="81.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.3"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.8"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="100.0"></mediumClouds>
+        <highClouds id="HIGH" percent="98.9"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T19:00:00Z" to="2025-03-11T20:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T14:00:00Z" to="2025-03-11T20:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.1" minvalue="0.6" maxvalue="1.7"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.2"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T21:00:00Z" to="2025-03-11T21:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.4"></temperature>
+        <windDirection id="dd" deg="42.2" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.4" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="7.9"></windGust>
+        <humidity unit="percent" value="81.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.3"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.8"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="100.0"></mediumClouds>
+        <highClouds id="HIGH" percent="96.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T20:00:00Z" to="2025-03-11T21:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.4"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T15:00:00Z" to="2025-03-11T21:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.2" minvalue="0.7" maxvalue="1.8"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.1"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T22:00:00Z" to="2025-03-11T22:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.2"></temperature>
+        <windDirection id="dd" deg="46.8" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.4" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="7.9"></windGust>
+        <humidity unit="percent" value="81.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.2"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="1.0"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="100.0"></mediumClouds>
+        <highClouds id="HIGH" percent="85.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.8"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T21:00:00Z" to="2025-03-11T22:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.2" maxvalue="0.4"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T16:00:00Z" to="2025-03-11T22:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.2" minvalue="0.7" maxvalue="1.9"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.9"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T23:00:00Z" to="2025-03-11T23:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.1"></temperature>
+        <windDirection id="dd" deg="46.9" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.5" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="8.1"></windGust>
+        <humidity unit="percent" value="80.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.1"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="1.0"></fog>
+        <lowClouds id="LOW" percent="99.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="100.0"></mediumClouds>
+        <highClouds id="HIGH" percent="62.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.9"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T22:00:00Z" to="2025-03-11T23:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.3" minvalue="0.2" maxvalue="0.4"></precipitation>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T17:00:00Z" to="2025-03-11T23:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.2" minvalue="0.8" maxvalue="2.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.7"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T00:00:00Z" to="2025-03-12T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.0"></temperature>
+        <windDirection id="dd" deg="46.4" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.6" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="8.4"></windGust>
+        <humidity unit="percent" value="80.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.8"></fog>
+        <lowClouds id="LOW" percent="99.7"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.8"></mediumClouds>
+        <highClouds id="HIGH" percent="49.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.1"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T23:00:00Z" to="2025-03-12T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T18:00:00Z" to="2025-03-12T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.3" minvalue="0.8" maxvalue="2.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.0"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.6"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T01:00:00Z" to="2025-03-12T01:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.2"></temperature>
+        <windDirection id="dd" deg="45.7" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.7" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="8.5"></windGust>
+        <humidity unit="percent" value="80.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.7"></fog>
+        <lowClouds id="LOW" percent="99.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.8"></mediumClouds>
+        <highClouds id="HIGH" percent="43.1"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.2"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T00:00:00Z" to="2025-03-12T01:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.2" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T19:00:00Z" to="2025-03-12T01:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.3" minvalue="0.9" maxvalue="2.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.5"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T02:00:00Z" to="2025-03-12T02:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.4"></temperature>
+        <windDirection id="dd" deg="44.2" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.9" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="8.9"></windGust>
+        <humidity unit="percent" value="80.1"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.6"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.6"></fog>
+        <lowClouds id="LOW" percent="99.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.4"></mediumClouds>
+        <highClouds id="HIGH" percent="34.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T01:00:00Z" to="2025-03-12T02:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.1" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T20:00:00Z" to="2025-03-12T02:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.3" minvalue="0.8" maxvalue="1.9"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.4"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T03:00:00Z" to="2025-03-12T03:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.5"></temperature>
+        <windDirection id="dd" deg="42.6" name="NE"></windDirection>
+        <windSpeed id="ff" mps="5.0" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="9.1"></windGust>
+        <humidity unit="percent" value="79.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.5"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.5"></fog>
+        <lowClouds id="LOW" percent="96.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="97.5"></mediumClouds>
+        <highClouds id="HIGH" percent="57.5"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T02:00:00Z" to="2025-03-12T03:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.1" minvalue="0.1" maxvalue="0.3"></precipitation>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T21:00:00Z" to="2025-03-12T03:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.2" minvalue="0.7" maxvalue="1.9"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.2"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T04:00:00Z" to="2025-03-12T04:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.7"></temperature>
+        <windDirection id="dd" deg="40.7" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.7" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="9.0"></windGust>
+        <humidity unit="percent" value="78.2"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.5"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.3"></fog>
+        <lowClouds id="LOW" percent="94.2"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="94.9"></mediumClouds>
+        <highClouds id="HIGH" percent="87.5"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.1"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T03:00:00Z" to="2025-03-12T04:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T22:00:00Z" to="2025-03-12T04:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="1.0" minvalue="0.6" maxvalue="1.8"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.1"></maxTemperature>
+        <symbol id="Snow" number="13" code="snow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T05:00:00Z" to="2025-03-12T05:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.8"></temperature>
+        <windDirection id="dd" deg="41.4" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.5" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="8.5"></windGust>
+        <humidity unit="percent" value="77.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.6"></pressure>
+        <cloudiness id="NN" percent="99.9"></cloudiness>
+        <fog id="FOG" percent="0.3"></fog>
+        <lowClouds id="LOW" percent="92.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="95.8"></mediumClouds>
+        <highClouds id="HIGH" percent="76.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T04:00:00Z" to="2025-03-12T05:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-11T23:00:00Z" to="2025-03-12T05:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.8" minvalue="0.5" maxvalue="1.5"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.0"></maxTemperature>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T06:00:00Z" to="2025-03-12T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.8"></temperature>
+        <windDirection id="dd" deg="42.5" name="NE"></windDirection>
+        <windSpeed id="ff" mps="4.2" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="8.1"></windGust>
+        <humidity unit="percent" value="75.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.2"></fog>
+        <lowClouds id="LOW" percent="89.1"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.2"></mediumClouds>
+        <highClouds id="HIGH" percent="57.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T05:00:00Z" to="2025-03-12T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T00:00:00Z" to="2025-03-12T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.6" minvalue="0.3" maxvalue="1.4"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.2"></maxTemperature>
+        <symbol id="LightSnow" number="49" code="lightsnow"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T07:00:00Z" to="2025-03-12T07:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.7"></temperature>
+        <windDirection id="dd" deg="47.8" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.4" beaufort="3" name="Lett bris"></windSpeed>
+        <windGust id="ff_gust" mps="7.6"></windGust>
+        <humidity unit="percent" value="75.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.0"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.3"></fog>
+        <lowClouds id="LOW" percent="90.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.7"></mediumClouds>
+        <highClouds id="HIGH" percent="67.5"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T06:00:00Z" to="2025-03-12T07:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T01:00:00Z" to="2025-03-12T07:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.5" minvalue="0.3" maxvalue="1.4"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.4"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T08:00:00Z" to="2025-03-12T08:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.4"></temperature>
+        <windDirection id="dd" deg="45.8" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.5"></windGust>
+        <humidity unit="percent" value="73.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.4"></fog>
+        <lowClouds id="LOW" percent="87.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.4"></mediumClouds>
+        <highClouds id="HIGH" percent="77.3"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.8"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T07:00:00Z" to="2025-03-12T08:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T02:00:00Z" to="2025-03-12T08:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="1.3"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.4"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T09:00:00Z" to="2025-03-12T09:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.1"></temperature>
+        <windDirection id="dd" deg="45.1" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.1"></windGust>
+        <humidity unit="percent" value="71.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.4"></fog>
+        <lowClouds id="LOW" percent="89.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="98.8"></mediumClouds>
+        <highClouds id="HIGH" percent="92.5"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T08:00:00Z" to="2025-03-12T09:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.2"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T03:00:00Z" to="2025-03-12T09:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="1.2"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.1"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T10:00:00Z" to="2025-03-12T10:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.3"></temperature>
+        <windDirection id="dd" deg="42.6" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.2"></windGust>
+        <humidity unit="percent" value="70.4"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.4"></fog>
+        <lowClouds id="LOW" percent="90.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="97.4"></mediumClouds>
+        <highClouds id="HIGH" percent="98.3"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.6"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T09:00:00Z" to="2025-03-12T10:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T04:00:00Z" to="2025-03-12T10:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="1.1"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.3"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T11:00:00Z" to="2025-03-12T11:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.7"></temperature>
+        <windDirection id="dd" deg="39.6" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.5"></windGust>
+        <humidity unit="percent" value="69.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.4"></fog>
+        <lowClouds id="LOW" percent="92.4"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="96.5"></mediumClouds>
+        <highClouds id="HIGH" percent="99.8"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T10:00:00Z" to="2025-03-12T11:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T05:00:00Z" to="2025-03-12T11:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.9"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.7"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T12:00:00Z" to="2025-03-12T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.1"></temperature>
+        <windDirection id="dd" deg="42.2" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.5"></windGust>
+        <humidity unit="percent" value="67.4"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.7"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.4"></fog>
+        <lowClouds id="LOW" percent="93.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="94.5"></mediumClouds>
+        <highClouds id="HIGH" percent="98.9"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T11:00:00Z" to="2025-03-12T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T06:00:00Z" to="2025-03-12T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.9"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.1"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T13:00:00Z" to="2025-03-12T13:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.4"></temperature>
+        <windDirection id="dd" deg="42.9" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.7"></windGust>
+        <humidity unit="percent" value="66.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.2"></pressure>
+        <cloudiness id="NN" percent="99.9"></cloudiness>
+        <fog id="FOG" percent="0.3"></fog>
+        <lowClouds id="LOW" percent="88.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="94.1"></mediumClouds>
+        <highClouds id="HIGH" percent="91.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T12:00:00Z" to="2025-03-12T13:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T07:00:00Z" to="2025-03-12T13:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.7"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.4"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T14:00:00Z" to="2025-03-12T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.6"></temperature>
+        <windDirection id="dd" deg="44.2" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.3" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.7"></windGust>
+        <humidity unit="percent" value="65.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1001.8"></pressure>
+        <cloudiness id="NN" percent="99.9"></cloudiness>
+        <fog id="FOG" percent="0.2"></fog>
+        <lowClouds id="LOW" percent="80.3"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="98.0"></mediumClouds>
+        <highClouds id="HIGH" percent="81.4"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T13:00:00Z" to="2025-03-12T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T08:00:00Z" to="2025-03-12T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.6"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T15:00:00Z" to="2025-03-12T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.6"></temperature>
+        <windDirection id="dd" deg="43.0" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.6"></windGust>
+        <humidity unit="percent" value="65.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1001.7"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.1"></fog>
+        <lowClouds id="LOW" percent="79.7"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.9"></mediumClouds>
+        <highClouds id="HIGH" percent="82.8"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.2"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T14:00:00Z" to="2025-03-12T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T09:00:00Z" to="2025-03-12T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.3"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T16:00:00Z" to="2025-03-12T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.4"></temperature>
+        <windDirection id="dd" deg="37.9" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="6.1"></windGust>
+        <humidity unit="percent" value="67.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1001.7"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.3"></fog>
+        <lowClouds id="LOW" percent="83.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="100.0"></mediumClouds>
+        <highClouds id="HIGH" percent="92.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.0"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T15:00:00Z" to="2025-03-12T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T10:00:00Z" to="2025-03-12T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T17:00:00Z" to="2025-03-12T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.1"></temperature>
+        <windDirection id="dd" deg="34.1" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.9" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.7"></windGust>
+        <humidity unit="percent" value="71.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1001.8"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.5"></fog>
+        <lowClouds id="LOW" percent="81.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="99.7"></mediumClouds>
+        <highClouds id="HIGH" percent="95.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.6"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T16:00:00Z" to="2025-03-12T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T11:00:00Z" to="2025-03-12T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T18:00:00Z" to="2025-03-12T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.7"></temperature>
+        <windDirection id="dd" deg="31.8" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.7" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.3"></windGust>
+        <humidity unit="percent" value="75.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.0"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <fog id="FOG" percent="0.4"></fog>
+        <lowClouds id="LOW" percent="76.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="98.4"></mediumClouds>
+        <highClouds id="HIGH" percent="91.2"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T17:00:00Z" to="2025-03-12T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T12:00:00Z" to="2025-03-12T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T19:00:00Z" to="2025-03-12T19:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.4"></temperature>
+        <windDirection id="dd" deg="31.2" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.7" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.0"></windGust>
+        <humidity unit="percent" value="76.4"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.2"></pressure>
+        <cloudiness id="NN" percent="99.6"></cloudiness>
+        <fog id="FOG" percent="0.3"></fog>
+        <lowClouds id="LOW" percent="73.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="94.3"></mediumClouds>
+        <highClouds id="HIGH" percent="74.8"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T18:00:00Z" to="2025-03-12T19:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T13:00:00Z" to="2025-03-12T19:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.6"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T20:00:00Z" to="2025-03-12T20:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.1"></temperature>
+        <windDirection id="dd" deg="29.7" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.9" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.3"></windGust>
+        <humidity unit="percent" value="77.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.5"></pressure>
+        <cloudiness id="NN" percent="97.3"></cloudiness>
+        <fog id="FOG" percent="0.3"></fog>
+        <lowClouds id="LOW" percent="75.1"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="86.3"></mediumClouds>
+        <highClouds id="HIGH" percent="22.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T19:00:00Z" to="2025-03-12T20:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T14:00:00Z" to="2025-03-12T20:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.6"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T21:00:00Z" to="2025-03-12T21:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.2"></temperature>
+        <windDirection id="dd" deg="28.6" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.4"></windGust>
+        <humidity unit="percent" value="77.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.7"></pressure>
+        <cloudiness id="NN" percent="92.5"></cloudiness>
+        <fog id="FOG" percent="0.2"></fog>
+        <lowClouds id="LOW" percent="69.3"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="73.1"></mediumClouds>
+        <highClouds id="HIGH" percent="6.8"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T20:00:00Z" to="2025-03-12T21:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T15:00:00Z" to="2025-03-12T21:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.6"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.4"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T22:00:00Z" to="2025-03-12T22:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.5"></temperature>
+        <windDirection id="dd" deg="28.4" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.9" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.3"></windGust>
+        <humidity unit="percent" value="77.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.7"></pressure>
+        <cloudiness id="NN" percent="75.2"></cloudiness>
+        <fog id="FOG" percent="0.1"></fog>
+        <lowClouds id="LOW" percent="50.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="49.1"></mediumClouds>
+        <highClouds id="HIGH" percent="4.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.0"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T21:00:00Z" to="2025-03-12T22:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T16:00:00Z" to="2025-03-12T22:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.1"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T23:00:00Z" to="2025-03-12T23:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.7"></temperature>
+        <windDirection id="dd" deg="25.4" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.9" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.2"></windGust>
+        <humidity unit="percent" value="77.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="62.2"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="44.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="29.4"></mediumClouds>
+        <highClouds id="HIGH" percent="2.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.2"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T22:00:00Z" to="2025-03-12T23:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T17:00:00Z" to="2025-03-12T23:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.7"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T00:00:00Z" to="2025-03-13T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-1.1"></temperature>
+        <windDirection id="dd" deg="19.8" name="N"></windDirection>
+        <windSpeed id="ff" mps="2.7" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.1"></windGust>
+        <humidity unit="percent" value="75.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.1"></pressure>
+        <cloudiness id="NN" percent="51.1"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="39.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="19.3"></mediumClouds>
+        <highClouds id="HIGH" percent="0.1"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-4.8"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T23:00:00Z" to="2025-03-13T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T18:00:00Z" to="2025-03-13T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-1.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.4"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T01:00:00Z" to="2025-03-13T01:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-1.5"></temperature>
+        <windDirection id="dd" deg="16.5" name="N"></windDirection>
+        <windSpeed id="ff" mps="2.7" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.7"></windGust>
+        <humidity unit="percent" value="75.2"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.1"></pressure>
+        <cloudiness id="NN" percent="33.0"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="24.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="11.8"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T00:00:00Z" to="2025-03-13T01:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T19:00:00Z" to="2025-03-13T01:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-1.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.1"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T02:00:00Z" to="2025-03-13T02:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-1.9"></temperature>
+        <windDirection id="dd" deg="17.4" name="N"></windDirection>
+        <windSpeed id="ff" mps="2.9" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.0"></windGust>
+        <humidity unit="percent" value="76.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.0"></pressure>
+        <cloudiness id="NN" percent="30.5"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="26.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="4.7"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.6"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T01:00:00Z" to="2025-03-13T02:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T20:00:00Z" to="2025-03-13T02:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-1.9"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.2"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T03:00:00Z" to="2025-03-13T03:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-2.3"></temperature>
+        <windDirection id="dd" deg="18.6" name="N"></windDirection>
+        <windSpeed id="ff" mps="3.1" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.3"></windGust>
+        <humidity unit="percent" value="76.7"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="26.9"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="25.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="1.1"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.8"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T02:00:00Z" to="2025-03-13T03:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T21:00:00Z" to="2025-03-13T03:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-2.3"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.5"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T04:00:00Z" to="2025-03-13T04:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-2.9"></temperature>
+        <windDirection id="dd" deg="22.5" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.3"></windGust>
+        <humidity unit="percent" value="77.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.0"></pressure>
+        <cloudiness id="NN" percent="20.2"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="20.2"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T03:00:00Z" to="2025-03-13T04:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T22:00:00Z" to="2025-03-13T04:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-2.9"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.7"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T05:00:00Z" to="2025-03-13T05:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-3.5"></temperature>
+        <windDirection id="dd" deg="25.2" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.9" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.1"></windGust>
+        <humidity unit="percent" value="77.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.2"></pressure>
+        <cloudiness id="NN" percent="15.4"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="15.4"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-7.0"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T04:00:00Z" to="2025-03-13T05:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-12T23:00:00Z" to="2025-03-13T05:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-1.1"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T06:00:00Z" to="2025-03-13T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-3.8"></temperature>
+        <windDirection id="dd" deg="25.0" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.1"></windGust>
+        <humidity unit="percent" value="78.1"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.6"></pressure>
+        <cloudiness id="NN" percent="8.2"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="8.2"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-7.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T05:00:00Z" to="2025-03-13T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T00:00:00Z" to="2025-03-13T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-1.5"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T07:00:00Z" to="2025-03-13T07:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-3.1"></temperature>
+        <windDirection id="dd" deg="26.4" name="NE"></windDirection>
+        <windSpeed id="ff" mps="3.0" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.4"></windGust>
+        <humidity unit="percent" value="74.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.8"></pressure>
+        <cloudiness id="NN" percent="1.5"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="1.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-7.1"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T06:00:00Z" to="2025-03-13T07:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T01:00:00Z" to="2025-03-13T07:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-1.9"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T08:00:00Z" to="2025-03-13T08:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-1.4"></temperature>
+        <windDirection id="dd" deg="35.7" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.4" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.4"></windGust>
+        <humidity unit="percent" value="69.2"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.9"></pressure>
+        <cloudiness id="NN" percent="0.1"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="0.1"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T07:00:00Z" to="2025-03-13T08:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T02:00:00Z" to="2025-03-13T08:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-1.4"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T09:00:00Z" to="2025-03-13T09:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.2"></temperature>
+        <windDirection id="dd" deg="61.8" name="NE"></windDirection>
+        <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.8"></windGust>
+        <humidity unit="percent" value="63.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1004.0"></pressure>
+        <cloudiness id="NN" percent="0.0"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T08:00:00Z" to="2025-03-13T09:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T03:00:00Z" to="2025-03-13T09:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.2"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T10:00:00Z" to="2025-03-13T10:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.2"></temperature>
+        <windDirection id="dd" deg="91.4" name="E"></windDirection>
+        <windSpeed id="ff" mps="1.6" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.2"></windGust>
+        <humidity unit="percent" value="58.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.9"></pressure>
+        <cloudiness id="NN" percent="3.5"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="3.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T09:00:00Z" to="2025-03-13T10:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T04:00:00Z" to="2025-03-13T10:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.2"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T11:00:00Z" to="2025-03-13T11:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="2.0"></temperature>
+        <windDirection id="dd" deg="115.1" name="SE"></windDirection>
+        <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.5"></windGust>
+        <humidity unit="percent" value="55.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.6"></pressure>
+        <cloudiness id="NN" percent="7.2"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="7.2"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T10:00:00Z" to="2025-03-13T11:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T05:00:00Z" to="2025-03-13T11:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="2.0"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T12:00:00Z" to="2025-03-13T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="2.7"></temperature>
+        <windDirection id="dd" deg="185.8" name="S"></windDirection>
+        <windSpeed id="ff" mps="1.5" beaufort="1" name="Flau vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.5"></windGust>
+        <humidity unit="percent" value="53.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.2"></pressure>
+        <cloudiness id="NN" percent="7.0"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="7.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T11:00:00Z" to="2025-03-13T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T06:00:00Z" to="2025-03-13T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="2.7"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T13:00:00Z" to="2025-03-13T13:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="3.1"></temperature>
+        <windDirection id="dd" deg="234.1" name="SW"></windDirection>
+        <windSpeed id="ff" mps="2.0" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.0"></windGust>
+        <humidity unit="percent" value="54.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="5.8"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="5.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.9"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T12:00:00Z" to="2025-03-13T13:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T07:00:00Z" to="2025-03-13T13:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-1.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.1"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T14:00:00Z" to="2025-03-13T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="3.4"></temperature>
+        <windDirection id="dd" deg="223.9" name="SW"></windDirection>
+        <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="5.5"></windGust>
+        <humidity unit="percent" value="53.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.7"></pressure>
+        <cloudiness id="NN" percent="3.7"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="3.7"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T13:00:00Z" to="2025-03-13T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T08:00:00Z" to="2025-03-13T14:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.4"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T15:00:00Z" to="2025-03-13T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="3.5"></temperature>
+        <windDirection id="dd" deg="220.1" name="SW"></windDirection>
+        <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.8"></windGust>
+        <humidity unit="percent" value="51.7"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.5"></pressure>
+        <cloudiness id="NN" percent="0.8"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="0.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.9"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T14:00:00Z" to="2025-03-13T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T09:00:00Z" to="2025-03-13T15:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.5"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T16:00:00Z" to="2025-03-13T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="3.3"></temperature>
+        <windDirection id="dd" deg="220.8" name="SW"></windDirection>
+        <windSpeed id="ff" mps="1.5" beaufort="1" name="Flau vind"></windSpeed>
+        <windGust id="ff_gust" mps="4.0"></windGust>
+        <humidity unit="percent" value="51.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.5"></pressure>
+        <cloudiness id="NN" percent="0.0"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.1"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T15:00:00Z" to="2025-03-13T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T10:00:00Z" to="2025-03-13T16:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="2.0"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.5"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T17:00:00Z" to="2025-03-13T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="2.1"></temperature>
+        <windDirection id="dd" deg="258.1" name="W"></windDirection>
+        <windSpeed id="ff" mps="1.0" beaufort="1" name="Flau vind"></windSpeed>
+        <windGust id="ff_gust" mps="3.0"></windGust>
+        <humidity unit="percent" value="60.2"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.6"></pressure>
+        <cloudiness id="NN" percent="0.0"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T16:00:00Z" to="2025-03-13T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T11:00:00Z" to="2025-03-13T17:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="2.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.5"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T18:00:00Z" to="2025-03-13T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.5"></temperature>
+        <windDirection id="dd" deg="340.9" name="N"></windDirection>
+        <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"></windSpeed>
+        <windGust id="ff_gust" mps="2.8"></windGust>
+        <humidity unit="percent" value="65.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1002.9"></pressure>
+        <cloudiness id="NN" percent="0.0"></cloudiness>
+        <fog id="FOG" percent="0.0"></fog>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T17:00:00Z" to="2025-03-13T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <symbol id="Sun" number="1" code="clearsky_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T12:00:00Z" to="2025-03-13T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.5"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T00:00:00Z" to="2025-03-14T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-2.4"></temperature>
+        <windDirection id="dd" deg="341.6" name="N"></windDirection>
+        <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="83.1"></humidity>
+        <pressure id="pr" unit="hPa" value="1003.7"></pressure>
+        <cloudiness id="NN" percent="0.8"></cloudiness>
+        <lowClouds id="LOW" percent="0.4"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.4"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.2"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-13T18:00:00Z" to="2025-03-14T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-2.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-0.2"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T06:00:00Z" to="2025-03-14T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-3.2"></temperature>
+        <windDirection id="dd" deg="333.0" name="NW"></windDirection>
+        <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="84.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1006.5"></pressure>
+        <cloudiness id="NN" percent="32.8"></cloudiness>
+        <lowClouds id="LOW" percent="21.9"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="13.3"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T00:00:00Z" to="2025-03-14T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.9"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-2.4"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T12:00:00Z" to="2025-03-14T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="5.5"></temperature>
+        <windDirection id="dd" deg="244.9" name="SW"></windDirection>
+        <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="41.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1009.7"></pressure>
+        <cloudiness id="NN" percent="8.6"></cloudiness>
+        <lowClouds id="LOW" percent="3.1"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="4.3"></mediumClouds>
+        <highClouds id="HIGH" percent="2.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.8"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T06:00:00Z" to="2025-03-14T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="5.5"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T18:00:00Z" to="2025-03-14T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.1"></temperature>
+        <windDirection id="dd" deg="200.9" name="S"></windDirection>
+        <windSpeed id="ff" mps="1.0" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="64.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1012.3"></pressure>
+        <cloudiness id="NN" percent="14.1"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="14.1"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T12:00:00Z" to="2025-03-14T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="5.5"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T00:00:00Z" to="2025-03-15T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-1.2"></temperature>
+        <windDirection id="dd" deg="196.9" name="S"></windDirection>
+        <windSpeed id="ff" mps="0.9" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="74.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1014.9"></pressure>
+        <cloudiness id="NN" percent="38.7"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="39.1"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-14T18:00:00Z" to="2025-03-15T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-1.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.1"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T06:00:00Z" to="2025-03-15T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-3.6"></temperature>
+        <windDirection id="dd" deg="327.7" name="NW"></windDirection>
+        <windSpeed id="ff" mps="1.5" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="82.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1016.1"></pressure>
+        <cloudiness id="NN" percent="67.2"></cloudiness>
+        <lowClouds id="LOW" percent="20.3"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="3.5"></mediumClouds>
+        <highClouds id="HIGH" percent="60.2"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-6.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T00:00:00Z" to="2025-03-15T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-4.0"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="-1.2"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T12:00:00Z" to="2025-03-15T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="6.1"></temperature>
+        <windDirection id="dd" deg="238.8" name="SW"></windDirection>
+        <windSpeed id="ff" mps="2.3" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="43.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1017.2"></pressure>
+        <cloudiness id="NN" percent="65.2"></cloudiness>
+        <lowClouds id="LOW" percent="0.4"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="2.7"></mediumClouds>
+        <highClouds id="HIGH" percent="64.1"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-5.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T06:00:00Z" to="2025-03-15T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-3.6"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="6.1"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T18:00:00Z" to="2025-03-15T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="2.9"></temperature>
+        <windDirection id="dd" deg="212.3" name="SW"></windDirection>
+        <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="72.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1015.8"></pressure>
+        <cloudiness id="NN" percent="66.0"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="1.6"></mediumClouds>
+        <highClouds id="HIGH" percent="63.3"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-1.7"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T12:00:00Z" to="2025-03-15T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="2.9"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="6.1"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T00:00:00Z" to="2025-03-16T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.2"></temperature>
+        <windDirection id="dd" deg="247.7" name="W"></windDirection>
+        <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="82.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1016.0"></pressure>
+        <cloudiness id="NN" percent="94.1"></cloudiness>
+        <lowClouds id="LOW" percent="0.4"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="1.2"></mediumClouds>
+        <highClouds id="HIGH" percent="94.1"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-1.6"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-15T18:00:00Z" to="2025-03-16T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="2.9"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T06:00:00Z" to="2025-03-16T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.4"></temperature>
+        <windDirection id="dd" deg="332.6" name="NW"></windDirection>
+        <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="83.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1017.2"></pressure>
+        <cloudiness id="NN" percent="61.7"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="2.3"></mediumClouds>
+        <highClouds id="HIGH" percent="60.9"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-1.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T00:00:00Z" to="2025-03-16T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.4"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T12:00:00Z" to="2025-03-16T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="10.2"></temperature>
+        <windDirection id="dd" deg="201.2" name="S"></windDirection>
+        <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="43.2"></humidity>
+        <pressure id="pr" unit="hPa" value="1021.1"></pressure>
+        <cloudiness id="NN" percent="75.0"></cloudiness>
+        <lowClouds id="LOW" percent="7.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="74.2"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.0"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T06:00:00Z" to="2025-03-16T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="10.2"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T18:00:00Z" to="2025-03-16T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="5.4"></temperature>
+        <windDirection id="dd" deg="29.1" name="NE"></windDirection>
+        <windSpeed id="ff" mps="2.6" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="66.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1023.4"></pressure>
+        <cloudiness id="NN" percent="39.8"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="39.8"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-0.6"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T12:00:00Z" to="2025-03-16T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="5.3"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="10.2"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T00:00:00Z" to="2025-03-17T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.8"></temperature>
+        <windDirection id="dd" deg="339.4" name="N"></windDirection>
+        <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="75.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1026.0"></pressure>
+        <cloudiness id="NN" percent="5.1"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="5.5"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-16T18:00:00Z" to="2025-03-17T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.8"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="5.4"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T06:00:00Z" to="2025-03-17T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="-0.1"></temperature>
+        <windDirection id="dd" deg="20.7" name="N"></windDirection>
+        <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="80.2"></humidity>
+        <pressure id="pr" unit="hPa" value="1028.5"></pressure>
+        <cloudiness id="NN" percent="49.2"></cloudiness>
+        <lowClouds id="LOW" percent="26.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="12.9"></mediumClouds>
+        <highClouds id="HIGH" percent="23.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T00:00:00Z" to="2025-03-17T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.8"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T12:00:00Z" to="2025-03-17T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="7.8"></temperature>
+        <windDirection id="dd" deg="206.8" name="SW"></windDirection>
+        <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="47.1"></humidity>
+        <pressure id="pr" unit="hPa" value="1026.9"></pressure>
+        <cloudiness id="NN" percent="64.1"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="64.1"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-3.0"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T06:00:00Z" to="2025-03-17T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="7.8"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T18:00:00Z" to="2025-03-17T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="3.9"></temperature>
+        <windDirection id="dd" deg="164.5" name="S"></windDirection>
+        <windSpeed id="ff" mps="1.7" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="72.1"></humidity>
+        <pressure id="pr" unit="hPa" value="1025.8"></pressure>
+        <cloudiness id="NN" percent="19.5"></cloudiness>
+        <lowClouds id="LOW" percent="12.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="11.7"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-0.9"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T12:00:00Z" to="2025-03-17T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="3.9"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="7.8"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T00:00:00Z" to="2025-03-18T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.9"></temperature>
+        <windDirection id="dd" deg="336.7" name="NW"></windDirection>
+        <windSpeed id="ff" mps="1.2" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="82.7"></humidity>
+        <pressure id="pr" unit="hPa" value="1028.6"></pressure>
+        <cloudiness id="NN" percent="86.3"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="86.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-1.9"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-17T18:00:00Z" to="2025-03-18T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.9"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T06:00:00Z" to="2025-03-18T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.4"></temperature>
+        <windDirection id="dd" deg="334.2" name="NW"></windDirection>
+        <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="89.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1023.4"></pressure>
+        <cloudiness id="NN" percent="98.4"></cloudiness>
+        <lowClouds id="LOW" percent="26.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="97.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-1.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T00:00:00Z" to="2025-03-18T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="0.9"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T12:00:00Z" to="2025-03-18T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="8.0"></temperature>
+        <windDirection id="dd" deg="199.9" name="S"></windDirection>
+        <windSpeed id="ff" mps="2.0" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="58.9"></humidity>
+        <pressure id="pr" unit="hPa" value="1021.9"></pressure>
+        <cloudiness id="NN" percent="97.7"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="97.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="0.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T06:00:00Z" to="2025-03-18T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="8.0"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T18:00:00Z" to="2025-03-18T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="4.4"></temperature>
+        <windDirection id="dd" deg="194.9" name="S"></windDirection>
+        <windSpeed id="ff" mps="1.8" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="75.3"></humidity>
+        <pressure id="pr" unit="hPa" value="1016.7"></pressure>
+        <cloudiness id="NN" percent="66.8"></cloudiness>
+        <lowClouds id="LOW" percent="0.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="72.3"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="0.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T12:00:00Z" to="2025-03-18T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="4.4"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="8.0"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T00:00:00Z" to="2025-03-19T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.6"></temperature>
+        <windDirection id="dd" deg="200.7" name="S"></windDirection>
+        <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="85.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1015.4"></pressure>
+        <cloudiness id="NN" percent="5.5"></cloudiness>
+        <lowClouds id="LOW" percent="5.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-0.9"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-18T18:00:00Z" to="2025-03-19T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.6"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="4.4"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T06:00:00Z" to="2025-03-19T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="0.0"></temperature>
+        <windDirection id="dd" deg="340.5" name="N"></windDirection>
+        <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="85.4"></humidity>
+        <pressure id="pr" unit="hPa" value="1021.8"></pressure>
+        <cloudiness id="NN" percent="42.2"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="42.2"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T00:00:00Z" to="2025-03-19T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="-0.2"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="Sun" number="1" code="clearsky_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T12:00:00Z" to="2025-03-19T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="6.5"></temperature>
+        <windDirection id="dd" deg="193.3" name="S"></windDirection>
+        <windSpeed id="ff" mps="2.0" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="54.0"></humidity>
+        <pressure id="pr" unit="hPa" value="1016.7"></pressure>
+        <cloudiness id="NN" percent="35.5"></cloudiness>
+        <lowClouds id="LOW" percent="17.6"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="18.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-2.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T06:00:00Z" to="2025-03-19T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.0"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="6.5"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T18:00:00Z" to="2025-03-19T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="3.7"></temperature>
+        <windDirection id="dd" deg="171.4" name="S"></windDirection>
+        <windSpeed id="ff" mps="2.0" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="80.7"></humidity>
+        <pressure id="pr" unit="hPa" value="1018.8"></pressure>
+        <cloudiness id="NN" percent="98.4"></cloudiness>
+        <lowClouds id="LOW" percent="44.5"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="35.2"></mediumClouds>
+        <highClouds id="HIGH" percent="95.3"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="0.6"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T12:00:00Z" to="2025-03-19T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="3.7"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="6.5"></maxTemperature>
+        <symbol id="LightCloud" number="2" code="fair_day"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T00:00:00Z" to="2025-03-20T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.6"></temperature>
+        <windDirection id="dd" deg="170.5" name="S"></windDirection>
+        <windSpeed id="ff" mps="1.3" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="84.5"></humidity>
+        <pressure id="pr" unit="hPa" value="1014.0"></pressure>
+        <cloudiness id="NN" percent="41.4"></cloudiness>
+        <lowClouds id="LOW" percent="41.4"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="0.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-0.9"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-19T18:00:00Z" to="2025-03-20T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.6"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.7"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T06:00:00Z" to="2025-03-20T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="1.3"></temperature>
+        <windDirection id="dd" deg="26.9" name="NE"></windDirection>
+        <windSpeed id="ff" mps="1.4" beaufort="1" name="Flau vind"></windSpeed>
+        <humidity unit="percent" value="91.2"></humidity>
+        <pressure id="pr" unit="hPa" value="1011.7"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <lowClouds id="LOW" percent="100.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="67.6"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="-0.1"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T00:00:00Z" to="2025-03-20T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="0.6"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="1.6"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T12:00:00Z" to="2025-03-20T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="6.7"></temperature>
+        <windDirection id="dd" deg="194.5" name="S"></windDirection>
+        <windSpeed id="ff" mps="2.5" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="69.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1014.3"></pressure>
+        <cloudiness id="NN" percent="98.8"></cloudiness>
+        <lowClouds id="LOW" percent="58.2"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="4.3"></mediumClouds>
+        <highClouds id="HIGH" percent="69.9"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="1.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T06:00:00Z" to="2025-03-20T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="1.3"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="6.7"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T18:00:00Z" to="2025-03-20T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="5.2"></temperature>
+        <windDirection id="dd" deg="171.5" name="S"></windDirection>
+        <windSpeed id="ff" mps="2.7" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="77.1"></humidity>
+        <pressure id="pr" unit="hPa" value="1010.7"></pressure>
+        <cloudiness id="NN" percent="57.8"></cloudiness>
+        <lowClouds id="LOW" percent="0.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="0.0"></mediumClouds>
+        <highClouds id="HIGH" percent="57.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="1.4"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T12:00:00Z" to="2025-03-20T18:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="4.9"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="6.7"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-21T00:00:00Z" to="2025-03-21T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="3.2"></temperature>
+        <windDirection id="dd" deg="162.2" name="S"></windDirection>
+        <windSpeed id="ff" mps="1.9" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="92.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1011.2"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <lowClouds id="LOW" percent="100.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="44.5"></mediumClouds>
+        <highClouds id="HIGH" percent="99.2"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="2.0"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-20T18:00:00Z" to="2025-03-21T00:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="3.1"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="5.2"></maxTemperature>
+        <symbol id="PartlyCloud" number="3" code="partlycloudy_night"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-21T06:00:00Z" to="2025-03-21T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="2.5"></temperature>
+        <windDirection id="dd" deg="195.3" name="S"></windDirection>
+        <windSpeed id="ff" mps="2.1" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="92.8"></humidity>
+        <pressure id="pr" unit="hPa" value="1012.4"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <lowClouds id="LOW" percent="100.0"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="56.2"></mediumClouds>
+        <highClouds id="HIGH" percent="97.7"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="1.3"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-21T00:00:00Z" to="2025-03-21T06:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="2.0"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="3.2"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-21T12:00:00Z" to="2025-03-21T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <temperature id="TTT" unit="celsius" value="8.0"></temperature>
+        <windDirection id="dd" deg="201.7" name="S"></windDirection>
+        <windSpeed id="ff" mps="3.2" beaufort="2" name="Svak vind"></windSpeed>
+        <humidity unit="percent" value="73.6"></humidity>
+        <pressure id="pr" unit="hPa" value="1012.5"></pressure>
+        <cloudiness id="NN" percent="100.0"></cloudiness>
+        <lowClouds id="LOW" percent="91.8"></lowClouds>
+        <mediumClouds id="MEDIUM" percent="30.9"></mediumClouds>
+        <highClouds id="HIGH" percent="100.0"></highClouds>
+        <dewpointTemperature id="TD" unit="celsius" value="3.5"></dewpointTemperature>
+      </location>
+    </time>
+    <time datatype="forecast" from="2025-03-21T06:00:00Z" to="2025-03-21T12:00:00Z">
+      <location altitude="90" latitude="59.93" longitude="10.72">
+        <precipitation unit="mm" value="0.0" minvalue="0.0" maxvalue="0.0"></precipitation>
+        <minTemperature id="TTT" unit="celsius" value="2.5"></minTemperature>
+        <maxTemperature id="TTT" unit="celsius" value="8.0"></maxTemperature>
+        <symbol id="Cloud" number="4" code="cloudy"></symbol>
+      </location>
+    </time>
+  </product>
+</weatherdata>
