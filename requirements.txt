@@ -54,3 +54,4 @@ wcwidth==0.2.13
 xlrd==2.0.1
 XlsxWriter==3.2.0
 zipp==3.20.0
+requests==2.32.3
