@@ -11,5 +11,5 @@ data = Daily('72509', start, end)
 data = data.fetch()
 data=data.reset_index().iloc[:,[0,1,2,3,4,6,7,9]]
 
-data.to_csv('bostonData2.csv',index=False)
+data.to_csv('BostonData2.csv',index=False)
 
