@@ -1,49 +1,71 @@
+'''import requests
+
+# Frost API-endepunkt for kilder
+endpoint = 'https://frost.met.no/sources/v0.jsonld'
+
+# Utfør HTTP GET-forespørsel
+r = requests.get(endpoint, auth=("f9d56ccf-fe79-45ff-970e-959f8e0de1e5", ""))
+
+# Sjekk om forespørselen var vellykket og hent JSON-data
+if r.status_code == 200:
+    json = r.json()
+    sources = json['data']  # Listen over kilder
+    for source in sources:
+        print(source['id'], source['name'])  # Utskrift av kildenavn og ID
+else:
+    print(f"Error! Returned status code {r.status_code}")
+'''
+
 import requests
 
-def find_parameters(sources, elements=None):
-    """
-    Denne funksjonen finner tilgjengelige parametere for frost.met.no basert på spesifiserte kilder og elementer.
-    
-    :param sources: En kommaseparert streng med kildene, f.eks. 'SN18700,SN90450'.
-    :param elements: Valgfritt - En kommaseparert streng med ønskede elementer (f.eks. 'mean(air_temperature P1D)')
-    
-    :return: En liste med tilgjengelige parametere for kildene og elementene
-    """
-    
-    # Endpoint for tilgjengelige tidsserier
-    available_endpoint = 'https://frost.met.no/observations/availableTimeSeries/v0.jsonld'
+# Frost API-endepunkt for kilder
+endpoint = 'https://frost.met.no/sources/v0.jsonld'
 
-    # Sette opp parameterne
-    params = {
-        'sources': sources,
-    }
-    
-    # Hvis elementer er spesifisert, legg dem til i parameterne
-    if elements:
-        params['elements'] = elements
+# Utfør HTTP GET-forespørsel
+r = requests.get(endpoint, auth=("f9d56ccf-fe79-45ff-970e-959f8e0de1e5", ""))
 
-    # Utfør HTTP GET forespørsel
-    r = requests.get(available_endpoint, params, auth=("f9d56ccf-fe79-45ff-970e-959f8e0de1e5", ""))
+# Sjekk om forespørselen var vellykket og hent JSON-data
+if r.status_code == 200:
+    json = r.json()
+    sources = json['data']  # Listen over kilder
     
-    # Sjekk om forespørselen var vellykket
-    if r.status_code == 200:
-        json = r.json()
-        if 'data' in json:
-            return json['data']
-        else:
-            print("Ingen data funnet for de angitte parameterne.")
-            return None
+    # Filtrer kildene for å finne de som har "Trondheim" i navnet
+    for source in sources:
+        source_name = source.get('name', '').lower()  # Hent kildens navn og gjør det til små bokstaver
+        if 'trondheim' in source_name:  # Sjekk om "trondheim" er i kildens navn
+            print(f"Source ID: {source['id']}, Source Name: {source['name']}")
+else:
+    print(f"Error! Returned status code {r.status_code}")
+
+'''
+import requests
+
+# Frost API-endepunkt for observasjoner
+endpoint = 'https://frost.met.no/observations/v0.jsonld'
+
+# Parametre for forespørselen
+params = {
+    'sources': 'SN68173',  # Kilde-ID for værstasjonen SN68173
+    'elements': 'air_temperature,precipitation_amount',  # Eksempel på elementer
+    'referencetime': '2020-01-01/2020-12-31'  # Tidsperiode for observasjoner
+}
+
+# Utfør HTTP GET-forespørsel
+r = requests.get(endpoint, params=params, auth=("f9d56ccf-fe79-45ff-970e-959f8e0de1e5", ""))
+
+# Sjekk om forespørselen var vellykket og hent JSON-data
+if r.status_code == 200:
+    json = r.json()
+    if 'data' in json:
+        data = json['data']
+        print(f"Elementer for værstasjon {params['sources']}:")
+        for item in data:
+            # Vis alle tilgjengelige observasjoner
+            for observation in item.get('observations', []):
+                print(f"Element ID: {observation['elementId']}, Value: {observation['value']}")
     else:
-        print(f"Feil! Statuskode: {r.status_code}")
-        print(f"Feilmelding: {r.json().get('error', {}).get('message', 'Ingen feilmelding tilgjengelig')}")
-        return None
-
-
-# Test funksjonen
-sources = 'SN18700,SN90450'
-elements = 'mean(air_temperature P1D),sum(precipitation_amount P1D)'  # Kan være valgfritt
-
-parameters = find_parameters(sources, elements)
-
-if parameters:
-    print(parameters)
+        print("Ingen data funnet for denne værstasjonen.")
+else:
+    print(f"Error! Returned status code {r.status_code}")
+    print(r.text)  # Utskrift av feilmelding for ytterligere feilsøking
+'''
