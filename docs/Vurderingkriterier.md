@@ -9,3 +9,4 @@ Vurderingskriterier
 3. Dersom det er brukt API-er, hvilke spesifikke API-er er valgt å bruke, og hva er de viktigste dataene som kan hentes fra disse kildene?
    1. I vårt første datasett brukte vi frost API sin API. Dette er en tjeneste fra Meteorologisk institutt for å hente værdata. kodesnutten requests.get(endpoint, parameters, auth=...) sender et HTTP GET forespørsel til en ekstern server. API URLen er en indikasjon på at data blir hentet fra internett. 
    2. I vårt andre datasett har vi brukt meteostat API. koden i dataSett2.py importerer Stations og Daily fra meteostat, som er en python modul for å hente data. Daily('72509', start, end) henter værdata fra stasjon 72509 innen et tidsrom. 
+   3. I det tredje datasettet hentet vi en .csv fil fra Kaggle. Vi lagde så en kode som konverterte filen til .json. 
