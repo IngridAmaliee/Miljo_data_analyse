@@ -1,1 +1,3 @@
-Generell info
+Generell info om oppgaven...
+
+KI-deklarasjonen som finnes i denne mappen er en deklarasjon som omhandler bruk av KI under denne oppgaven som alle i gruppen signerer.
