@@ -16,6 +16,9 @@ else:
     print(f"Error! Returned status code {r.status_code}")
 '''
 
+
+
+
 import requests
 
 # Frost API-endepunkt for kilder
@@ -29,13 +32,16 @@ if r.status_code == 200:
     json = r.json()
     sources = json['data']  # Listen over kilder
     
-    # Filtrer kildene for å finne de som har "Trondheim" i navnet
+    # Filtrer kildene for å finne de som har "Stavanger" i navnet
     for source in sources:
         source_name = source.get('name', '').lower()  # Hent kildens navn og gjør det til små bokstaver
-        if 'trondheim' in source_name:  # Sjekk om "trondheim" er i kildens navn
+        if 'stavanger' in source_name:  # Sjekk om "oslo" er i kildens navn
             print(f"Source ID: {source['id']}, Source Name: {source['name']}")
 else:
     print(f"Error! Returned status code {r.status_code}")
+
+
+
 
 '''
 import requests
