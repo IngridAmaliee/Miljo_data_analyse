@@ -16,7 +16,7 @@ else:
     print(f"Error! Returned status code {r.status_code}")
 '''
 
-
+#Funksjon som finner paramterer til bruk i frost api
 
 
 import requests
@@ -35,7 +35,7 @@ if r.status_code == 200:
     # Filtrer kildene for å finne de som har "Stavanger" i navnet
     for source in sources:
         source_name = source.get('name', '').lower()  # Hent kildens navn og gjør det til små bokstaver
-        if 'stavanger' in source_name:  # Sjekk om "oslo" er i kildens navn
+        if 'oslo' in source_name:  # Sjekk om "oslo" er i kildens navn
             print(f"Source ID: {source['id']}, Source Name: {source['name']}")
 else:
     print(f"Error! Returned status code {r.status_code}")
