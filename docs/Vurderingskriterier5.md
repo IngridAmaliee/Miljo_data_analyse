@@ -25,5 +25,35 @@
         sns.scatterplot(x='dato', y='123', hue='mangler_temp', data=df)
         plt.title("markering for manglende temperaturdata")
 4. Kan du beskrive prosessen for å lage interaktive visualiseringer med Widgets, Plotly eller Bokeh, og hvilke fordeler dette kan gi i forhold til statiske visualiseringer?
-   1. Ved å lage interaktive visualiseringer med Widgets, Plotly og Bokeh har man mange fordeler man ikke får ved å bruke statiske grafer. Med plotly.express eller plotly.graph_objects kan man lage interaktive grafer hvor man kan zoome, hovre og klikke rett inn i jupyter notebook eller inn i en nettleser. Med Bokeh kan man lage gode visualiseringer for nettsider og kan kombineres med Widgets. Bokeh er bra å bruke når man jobber med store datasett og om man vil at brukeren skal interagere med grafene. Det fungerer også bra sammen med pandas, Numpy og Jupyter Notebook. Med ipywidgets og Plotly kan man lage små interaktive apper i notebook, dette er praktisk for eksempel ved presentasjoner eller om man ønsker å ha dynamisk filtrering og visualisering.
+   1. Ved å lage interaktive visualiseringer med Widgets, Plotly og Bokeh har man mange fordeler man ikke får ved å bruke statiske grafer. Med plotly.express eller plotly.graph_objects kan man lage interaktive grafer hvor man kan zoome, hovre og klikke rett inn i jupyter notebook eller inn i en nettleser. Eksempel:
+      1. import plotly.express as px
+        fig = px.scatter(df, x='temperatur', y='PM2_5', color='måned', hover_data=['dato'])
+        fig.update_layout(title='Sammenheng mellom temperatur og PM2.5')
+        fig.show()
+   2.  Med Bokeh kan man lage gode visualiseringer for nettsider og kan kombineres med Widgets. Bokeh er bra å bruke når man jobber med store datasett og om man vil at brukeren skal interagere med grafene. Det fungerer også bra sammen med pandas, Numpy og Jupyter Notebook. Eksempel:
+       1.  from bokeh.plotting import figure, show
+            from bokeh.models import HoverTool
+            from bokeh.io import output_notebook
+
+            output_notebook()
+
+            p = figure(title="Temperatur over tid", x_axis_type='datetime')
+            p.line(df['dato'], df['temperatur'], line_width=2)
+
+            hover = HoverTool(tooltips=[("Dato", "abc"), ("Temp", "def")], formatters={'@x': 'datetime'})
+            p.add_tools(hover)
+
+            show(p)
+
+   3. Med ipywidgets og Plotly kan man lage små interaktive apper i notebook, dette er praktisk for eksempel ved presentasjoner eller om man ønsker å ha dynamisk filtrering og visualisering. Eksempel:
+      1. import ipywidgets as widgets
+        from IPython.display import display
+
+        def oppdater_graf(måned):
+            filtered = df[df['måned'] == måned]
+            fig = px.line(filtered, x='dato', y='temperatur', title=f'Temperatur i måned {måned}')
+            fig.show()
+
+        widgets.interact(oppdater_graf, måned=widgets.Dropdown(options=df['måned'].unique()))
+
 5. Hvordan vil du evaluere effektiviteten av visualiseringene dine i å formidle de viktigste funnene fra dataanalysen til et bredere publikum?
