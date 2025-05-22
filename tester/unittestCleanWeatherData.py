@@ -1,9 +1,3 @@
-# kode som tester:
-# at funksjonen fungerer
-# at alle NULL verdier og uteliggeren 100.0 er fjernet
-# at alle temperaturdata ligger i et realistisk temperaturområde
-# at gjennomsnittet brukes til å erstatte uteliggeren
-
 import unittest
 import json
 import os

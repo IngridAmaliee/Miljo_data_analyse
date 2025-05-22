@@ -1,9 +1,3 @@
-# kode som tester:
-# at koden leser værdata fra en JSON-fil   
-# at den finner uteliggere
-# at den håndterer manglende verdier 
-# sørger for at ingen falske uteliggere blir rapportert
-
 import unittest
 import json
 import os
