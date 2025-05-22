@@ -1,3 +1,9 @@
+# kode som tester:
+# at API-kallene fungerer (ved bruka av mock)
+# suksess og failure
+# verifisering av filskriving 
+# ryyder opp --> fjerner testfilen
+
 import unittest
 from unittest.mock import patch, MagicMock
 import json

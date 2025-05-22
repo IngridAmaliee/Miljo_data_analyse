@@ -1,0 +1,1 @@
+ (( beskrivelse av oppgaven, hvordan laste ned requirements, venv. Env osv ))
