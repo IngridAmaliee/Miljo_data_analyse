@@ -32,7 +32,7 @@ if r.status_code == 200:
     json = r.json()
     sources = json['data']  # Listen over kilder
     
-    # Filtrer kildene for å finne de som har "Stavanger" i navnet
+    # Filtrer kildene for å finne de som har "oslo" i navnet
     for source in sources:
         source_name = source.get('name', '').lower()  # Hent kildens navn og gjør det til små bokstaver
         if 'oslo' in source_name:  # Sjekk om "oslo" er i kildens navn
