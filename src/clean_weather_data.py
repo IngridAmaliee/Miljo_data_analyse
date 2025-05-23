@@ -24,7 +24,7 @@ def calculate_bounds(df, column):
     return df[column].quantile(0.05), df[column].quantile(0.95)
 
 def replace_outliers_and_nulls(df, column):
-    #Erstatter uteliggere og manglende verdier med gjennomsnittet i en kolonne.
+    # Erstatter uteliggere med gjennomsnitt, men NULL/NaN blir 0
     log_null_values(df, column)
 
     mean = round(np.mean(df[column].dropna()), 2)
@@ -37,11 +37,13 @@ def replace_outliers_and_nulls(df, column):
     else:
         print(f"No outliers found in '{column}'.")
 
-    df.loc[df[column].isnull(), column] = mean
+    # Sett NULL/NAN til 0
+    df.loc[df[column].isnull(), column] = 0
+    # Sett uteliggere til gjennomsnitt
     df.loc[(df[column] < lower) | (df[column] > upper), column] = mean
     df[column] = df[column].round(2)
 
-    print(f"Replaced NULLs and outliers in '{column}' with mean value: {mean}")
+    print(f"Replaced NULLs in '{column}' with 0 and outliers with mean value: {mean}")
     return df
 
 def clean_weather_dataframe(df, data_keys):
@@ -61,7 +63,7 @@ if __name__ == "__main__":
     file_path = "data/london_weather.json"
     output_path = "data/updated_london_weather.json"
     columns = ['cloud_cover', 'sunshine', 'global_radiation', 'max_temp', 'mean_temp',
-               'min_temp', 'precipitation', 'pressure', 'snow_depth']
+               'min_temp', 'precipitation', 'pressure', "snow_depth"]
 
     df = load_json_to_dataframe(file_path)
     cleaned_df = clean_weather_dataframe(df, columns)
