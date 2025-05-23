@@ -1,4 +1,4 @@
-# kode som kunn finner utliggere
+# kode som kunn finner utliggere i london_weather.json
 
 import json
 import numpy as np
@@ -30,7 +30,7 @@ def find_outliers_in_weather_data(file_path, data_key='max_temp'):
         return None
 
 # Eksempel på hvordan du kan bruke funksjonen:
-file_path = "/Users/evinehfagerhaug/Library/Mobile Documents/com~apple~CloudDocs/Downloads/TDT4114/Miljo_data_analyse/data/updated_london_weather.json"
+file_path = "C:\anvendt_prog\Anvendt_prosjekt\data\london_weather.json"
 outliers = find_outliers_in_weather_data(file_path, data_key='max_temp')
 
 # Skriv ut uteliggerne
@@ -38,7 +38,7 @@ if outliers is not None:
     print("Outliers:", outliers)
     
 # Eksempel på hvordan du kan bruke funksjonen for min_temp
-file_path = "/Users/evinehfagerhaug/Library/Mobile Documents/com~apple~CloudDocs/Downloads/TDT4114/Miljo_data_analyse/data/updated_london_weather.json"
+file_path = "C:\anvendt_prog\Anvendt_prosjekt\data\london_weather.json"
 outliers = find_outliers_in_weather_data(file_path, data_key='min_temp')
 
 # Skriv ut uteliggerne
