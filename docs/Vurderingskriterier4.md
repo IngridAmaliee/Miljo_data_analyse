@@ -1,80 +1,58 @@
-1. Hvordan kan du bruke NumPy og Pandas til å beregne gjennomsnitt, median og standardavvik for de innsamlede dataene, og hvorfor er disse statistiske målene viktige?
-   1. Disse statistiske målene er viktige for å kunne sammenligne de forskjellige byene vi har valgt. Ved å bruke gjennomsnitt finner man raskt ut hvilken by som har gjennomsnittlig mest regn, høyest temperatur osv. (gitt at man har disse dataene). Man kan også se utviklingen over tid. Ved å bruke median finner motstår man avvikene bedre enn ved gjennomsnittet. Her finner man hvilken temperatur byen har hatt flest ganger, eller hvor mye vind man har de fleste dager. Én varm dag drar ikke medianen opp. Ved å regne ut standardavvik finner man ut hvor mye været varierer rundt gjennomsnittet. Høyt standardavvik betyr store variasjoner = ustabilt vær. 
-   2. for å regne ut gjennomsnitt, median og standardavvik kan man bruke denne koden i Python(lest av CSV fil):
-      1. import pandas as pd
-         import numpy as np
+## 1. Hvordan kan du bruke NumPy og Pandas til å beregne gjennomsnitt, median og standardavvik for de innsamlede dataene, og hvorfor er disse statistiske målene viktige?
+I prosjektet bruker vi Pandas og NumPy til å beregne gjennomsnitt (mean), median (median) og standardavvik (std) for å analysere temperatur- og værdata. Dette er implementert både eksplisitt i analyse- og renseloggene (f.eks. clean_weather_data.py, FinnerTemp.py) og benyttes for å erstatte manglende verdier eller uteliggere.
 
-         # Lese inn CSV-fil
-         df = pd.read_csv('vaerdata.csv')
+Eksempel fra rensing:
+```
+mean = round(np.mean(df[column].dropna()), 2)
+median = df[column].median()
+std = df[column].std()
+```
+Disse statistiske målene er sentrale for å:
+- Forstå sentraltendens og variasjon i miljødata
+- Sammenligne byer (f.eks. London vs. Oslo)
+- Identifisere ekstreme værmønstre og uregelmessigheter
+- Danne grunnlag for videre prediktiv modellering
 
-         # Beregne statistiske mål
-         gjennomsnitt_temp = df['temperatur'].mean()
-         median_temp = df['temperatur'].median()
-         std_temp = df['temperatur'].std()
+Gjennomsnitt gir et overblikk over "typiske" verdier, median gir robusthet mot uteliggere, og standardavvik beskriver spredningen i datamaterialet.
 
-         gjennomsnitt_vind = df['vind'].mean()
-         median_vind = df['vind'].median()
-         std_vind = df['vind'].std()
+## 2. Kan du gi et eksempel på hvordan du vil implementere en enkel statistisk analyse for å undersøke sammenhengen mellom to variabler i datasettet?
+Vi benytter funksjoner fra Pandas og matplotlib/seaborn for å utforske relasjoner, f.eks. mellom temperatur og solskinn. I main.ipynb har vi utført analyse og korrelasjonsberegning mellom mean_temp og sunshine fra London-datasettet:
 
-         print("Temperatur - Gjennomsnitt:", gjennomsnitt_temp)
-         print("Temperatur - Median:", median_temp)
-         print("Temperatur - Standardavvik:", std_temp)
+```
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-         print("Vind - Gjennomsnitt:", gjennomsnitt_vind)
-         print("Vind - Median:", median_vind)
-         print("Vind - Standardavvik:", std_vind)
+sns.scatterplot(data=df, x='mean_temp', y='sunshine')
+plt.title("Sammenheng mellom temperatur og solskinn")
+plt.show()
 
-    3. Eventuelt kan man bruke numPy direkte:
-        1.  import numpy as np
+print("Korrelasjon:", df['mean_temp'].corr(df['sunshine']))
+```
+Dette gir innsikt i om høyere temperaturer henger sammen med mer solskinn, som er viktig for videre prediktiv modellering og forståelse av klimaeffekter.
 
-            temperaturer = df['temperatur'].to_numpy()
+## 3. Hvordan planlegger du å håndtere eventuelle skjevheter i dataene under analysen, og hvilke metoder vil du bruke for å sikre at analysen er pålitelig?
+Skjevheter håndteres på flere nivåer:
 
-            np.mean(temperaturer)
-            np.median(temperaturer)
-            np.std(temperaturer)
+- Rensing: 
+  - I clean_weather_data.py fjerner vi eller korrigerer uteliggere og manglende verdier basert på definerte grenser og sesonglogikk (f.eks. snow_depth settes til 0 i sommermånedene).
+- Uteliggere: 
+  - I find_outliers.py identifiseres uteliggere gjennom terskelverdier (eks. -50 til +50 °C). Disse logges og behandles eksplisitt.
+- Standardisering: 
+  - Vi bruker pandas.to_datetime() for å standardisere datoformat, og drop_duplicates() for å eliminere duplikater.
+- Bruk av robuste mål: 
+  - Median og IQR benyttes fremfor kun gjennomsnitt og standardavvik der det er hensiktsmessig, for å redusere påvirkning fra ekstreme verdier.
 
+Disse tiltakene sikrer høyere datakvalitet og pålitelig analyse.
 
-2. Kan du gi et eksempel på hvordan du vil implementere en enkel statistisk analyse for å undersøke sammenhengen mellom to variabler i datasettet?
-   1. La oss si vi har to forskjellige variabler i datasettet: temperatur og vind, og vi vil undersøke om det finnes en sammenheng mellom disse. Vi starter med å lage en scatter plot for å visualisere sammenhengen, videre beregner man korrelasjonen mellom de to variablene. Korrelasjonen vil fortelle oss om det er sammenhengen mellom variablene. Videre kan man lage en enkelt lineær regresjon for å se om den ene variabelen påvirker den andre. i Python kan de se slik ut:
-      1. import pandas as pd
-        import numpy as np
-        import matplotlib.pyplot as plt
+## 4. Hvilke visualiseringer vil du lage for å støtte analysen din, og hvordan vil disse visualiseringene hjelpe deg med å formidle funnene dine?
+Visualiseringene er implementert i bl.a. LondonWeather.py, BostonWeather.py og BlindernWeather.py. Vi benytter:
+- Tidsserieplott: 
+  - For å vise utvikling i temperatur og nedbør over tid
+- Boxplot: 
+  - For å illustrere fordeling og uteliggere
+- Scatterplot: 
+  - For å utforske sammenhenger (f.eks. solskinn vs. temperatur)
+- Histogram: 
+  - For å analysere fordeling (f.eks. normalitet i trykk eller temperatur)
 
-        # Simulerer fiktive værdata
-        data = {
-            'temperatur': [12, 14, 15, 17, 16, 15, 13, 12, 11, 10],
-            'vind': [3.2, 3.5, 3.7, 4.0, 3.8, 3.6, 3.3, 3.1, 3.0, 2.8]
-        }
-
-        df = pd.DataFrame(data)
-
-        # 1. Visualisere med scatter plot
-        plt.scatter(df['temperatur'], df['vind'])
-        plt.title("Sammenheng mellom temperatur og vind")
-        plt.xlabel("Temperatur (°C)")
-        plt.ylabel("Vind (m/s)")
-        plt.grid(True)
-        plt.show()
-
-        # 2. Beregn korrelasjon
-        korrelasjon = df['temperatur'].corr(df['vind'])
-        print("Korrelasjonskoeffisient:", korrelasjon)
-
-3. Hvordan planlegger du å håndtere eventuelle skjevheter i dataene under analysen, og hvilke metoder vil du bruke for å sikre at analysen er pålitelig?
-   1. Først må man gå frem for å finne ut om dataene inneholder skjevheter eller outliers(utliggere), ved å bruke histogrammer og boxplots kan man gjøre en visuell inspeksjon:
-      1. import seaborn as sns
-        sns.histplot(df['temperatur'], kde=True)
-        sns.boxplot(x=df['temperatur'])
-       2. beskrivende statistikk: print(df['temperatur'].describe())
-    2. For å håndtere outliers kan man bruke IQR metoden for å identifisere ekstreme verdier, man kan da velge om man vil justere eller fjerne disse verdiene:
-       1. Q1 = df['temperatur'].quantile(0.25)
-        Q3 = df['temperatur'].quantile(0.75)
-        IQR = Q3 - Q1
-        df_clean = df[(df['temperatur'] >= Q1 - 1.5 * IQR) & (df['temperatur'] <= Q3 + 1.5 * IQR)]
-    3. Om dataene er skjevfordelt(for eksempel høyrefordelt) kan man gjøre en log transformasjon for å gjøre dem normalfordelt:
-       1. import numpy as np
-        df['temperatur_log'] = np.log(df['temperatur'] + 1) 
-    4. En annen metode man kan bruke for å håndtere skjevheter er å bruke median, dette vbil være mer pålitelig enn gjennomsnitt da outliers ikke drar snittet. Istedenfor standardavvik kan man bruke IQR da IQR bare måler spredningen i den midterste halvparten av dataene. Dette minsker risikoen for at outliers ødelegger snittet. 
-    5. Det siste man kan gjøre for å sikre en pålitelig analyse er å fjerne duplikater, manglende verdier og outliers. Dette sørger for at ingen dataer får mer vekt enn andre på analysen og åpenbart uriktig data blir fjernet. Man burde bruke generell kode, altså kode som andre også kan forstå og bruke for å kunne kjøre analyse senere. Dette sørger for større reproduserbarhet og forståelse, noe som er viktig for samarbeid og videre dokumentasjon. 
-4. Hvilke visualiseringer vil du lage for å støtte analysen din, og hvordan vil disse visualiseringene hjelpe deg med å formidle funnene dine?
-   1. Jeg ville brukt histogram for å visualisere temperatur. Dette vil vise fordelingen av variabelen og gi god oversikt over eventuell skjevfordeling og outliers. Videre vil jeg bruke boxplot for å visualisere mediam. Boxplot er nyttig for å oppdage ekstremverdier og vurdere spredningen i dataene. Jeg ville også brukt en tidsserieplot for å visualisere utviklingen over tid. Dette er en god modell for å se sesonger, trender og eventuelle uregelmessigheter. 
+Disse hjelper oss med å oppdage trender, variasjoner og ekstreme verdier, og gir grunnlag for videre prediksjon og refleksjon.

@@ -1,12 +1,47 @@
-Vurderingskriterier oppgave 2
+# Vurderingskriterier – Oppgave 2: Datainnsamling
 
-1. Hvilke åpne datakilder er identifisert som relevante for miljødata, og hva er kriteriene (f.eks. kildeautoritet, datakvalitet, tilgjengelighet, brukervennlighet osv.) for å vurdere deres pålitelighet og kvalitet?
-   1. Frost API, copernicus climate data store, OpenAQ og EEA Air quality data er alle relevante kilder for miljødata. Frost API er en kilde fra meteorologisk institutt som gir historiske, samt sanntidsmålinger av væredata. Dette er en kilde med høy kildeautoritet da dette er en statlig kilde. Copernicus tilbyr data som er hentet fra sattelitter, samt bakkemålinger av høy kvalitet. Dette er en kilde som er drevet av det europeiske jordobservasjonsprogram og er også en pålitelig kilde. Det finnes utrolig mange flere kilder som tilbyr forskjellig type data både i norge og resten av verden. Noen eksempler er NOAA som henter hydrologiske data som analyserer havnivå og værmønstre, NVE som tilbyr vannføringsdata for norske innsjøer og elver og GBIF som tilbyr miljødata. Kriteriene for at dette skal være pålitelige kilder blant annet kildeautoritet. Hvem står bak dataene? Er det en statlig institusjon som har som hensikt å samle data for forskning? Er det et privat selskap som har som mål å selge noe? Statlige organisasjoner og forskningsinstitusjoner anses som mer pålitelige enn private aktører. Hvordan er kvaliteten på dataen? Hvor nøyaktig og komplett er dataen som er samlet inn? Kvalitet kan ofte måles i feilmarginer, kvalitet på utstyr og hvor ofte det blir opdatert. opdateringshyppighet er spesielt viktig ved sanntidsmålinger av værdata. Er det høy brukervennlighet på dataene? Struktur, dokumentasjon og støttemateriell er med på å bidra til brukervennligheten av dataene. Er dataene gratis og fritt tilgjengelige? Åpne lisenser som Creative Commons eller offentlige domener gir større fleksibilitet for bruk.
+## 1. Hvilke åpne datakilder er identifisert som relevante for miljødata, og hva er kriteriene (f.eks. kildeautoritet, datakvalitet, tilgjengelighet, brukervennlighet osv.) for å vurdere deres pålitelighet og kvalitet?
 
-2. Hvilke teknikker (f.eks. håndtering av CSV-filer, JSON-data) er valgt å bruke for å lese inn dataene, og hvordan påvirker disse valgene datakvaliteten og prosessen videre?
-   1. For det første datasettet har vi valgt å bruke en API nøkkel for å lese av data direkte fra kilden, vi har altså ikke lastet ned dataene selv, men bruker APIen for å hente dataene rett fa nett. dette sørger for at om dataene blir opdatert vil vi alltid ha den nyeste versjonen. For vårt andre datasett har vi funnet en kode fra Kaggle som laster ned datasettet vårt som en .csv fil. deretter har vi laget en kode som analyserer og viser dataene fra .csv filen. Ved å gjøre det på denne metoden har vi datasettet lokalt/ i repoet, noe som er en enklere prosess og vi vil alltid ha tilgang på dataene uavhengig av lisens og internett. Ulemper er at vi kan miste filen eller om det er store mengder med data vil det være uhåndterlig og tungvindt for en privat datamaskin å håndtere. For vårt siste datasett har vi valgt å laste ned en json fil. Dette er en mer oversiktlig fil enn .csv da det er mer strukturert. 
+Frost API, Copernicus Climate Data Store, OpenAQ og EEA Air Quality Data er alle relevante kilder for miljødata.  
+Frost API er en kilde fra Meteorologisk institutt som gir historiske samt sanntidsmålinger av værdata. Dette er en kilde med høy kildeautoritet, da den er statlig.
 
-3. Dersom det er brukt API-er, hvilke spesifikke API-er er valgt å bruke, og hva er de viktigste dataene som kan hentes fra disse kildene?
-   1. I vårt første datasett brukte vi frost API sin API. Dette er en tjeneste fra Meteorologisk institutt for å hente værdata. kodesnutten requests.get(endpoint, parameters, auth=...) sender et HTTP GET forespørsel til en ekstern server. API URLen er en indikasjon på at data blir hentet fra internett. 
-   2. I vårt andre datasett har vi brukt meteostat API. koden i dataSett2.py importerer Stations og Daily fra meteostat, som er en python modul for å hente data. Daily('72509', start, end) henter værdata fra stasjon 72509 innen et tidsrom. 
-   3. I det tredje datasettet hentet vi en .csv fil fra Kaggle. Vi lagde så en kode som konverterte filen til .json. 
+Copernicus tilbyr data hentet fra satellitter og bakkemålinger av høy kvalitet, drevet av det europeiske jordobservasjonsprogrammet – også en pålitelig aktør.
+
+Andre eksempler:
+- **NOAA** - hydrologiske data om havnivå og værmønstre
+- **NVE** - vannføringsdata fra norske innsjøer og elver
+- **GBIF** - global miljødata
+
+### Kriterier for pålitelighet:
+- **Kildeautoritet**: Er det en statlig eller forskningsbasert institusjon?
+- **Datakvalitet**: Hvor nøyaktige og komplette er dataene?
+- **Oppdateringshyppighet**: Er dataene oppdaterte, spesielt ved sanntidsbruk?
+- **Brukervennlighet**: Er dataene godt dokumentert og strukturert?
+- **Tilgjengelighet**: Er dataene åpne og lisensiert for gjenbruk?
+
+---
+
+## 2. Hvilke teknikker (f.eks. håndtering av CSV-filer, JSON-data) er valgt å bruke for å lese inn dataene, og hvordan påvirker disse valgene datakvaliteten og prosessen videre?
+
+- **observations_data.json (Frost API)**: Data hentes direkte fra kilden via API – alltid oppdatert med siste målinger. Krever internett og nøkkel.
+- **bostonData2.csv (Kaggle via API)**: CSV lastes ned og analyseres lokalt. Gir kontroll og enkel distribusjon, men kan bli utdaterte eller tunge filer.
+- **london_weather.json (Kaggle CSV → JSON)**: Lokal CSV konverteres til strukturert JSON for bedre manipulering og testing. JSON er bedre egnet for datarensing og simulering av feil.
+
+Valgene våre sikrer fleksibilitet og gjør det enklere å jobbe både med sanntid og lokal filbehandling.
+
+---
+
+## 3. Dersom det er brukt API-er, hvilke spesifikke API-er er valgt å bruke, og hva er de viktigste dataene som kan hentes fra disse kildene?
+
+API-er brukt og hva slags data de tilbyr:
+
+- **Frost API (observations_data.json)**  
+  Tjeneste fra Meteorologisk institutt for værdata. Kodesnutten `requests.get(endpoint, parameters, auth=...)` sender HTTP GET-forespørsel med API-nøkkel for autentisering.
+
+- **Meteostat API (bostonData2.csv)**  
+  Python-modul for værdata. Koden bruker `Daily('72509', start, end)` for å hente værhistorikk fra gitt stasjon.
+
+- **Kaggle CSV (london_weather.json)**  
+  Data lastes manuelt ned, og en konverteringskode lagrer det som JSON. Dette gir oss et kontrollerbart testmiljø hvor vi selv kunne tilføre feil og mangler.
+
+---
