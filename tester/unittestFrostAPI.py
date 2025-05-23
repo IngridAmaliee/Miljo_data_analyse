@@ -12,7 +12,7 @@ import sys
 
 # Legg til src-mappen i import-søkestien
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-import dataSettApi
+import FrostBlindern
 
 class TestFrostAPI(unittest.TestCase):
 
@@ -36,7 +36,7 @@ class TestFrostAPI(unittest.TestCase):
         mock_resp.json.return_value = fake_response
         mock_get.return_value = mock_resp
 
-        result = dataSettApi.hent_og_lagre_data()
+        result = FrostBlindern.hent_og_lagre_data()
 
         expected_file = 'data/observations_data.json'
         self.assertTrue(os.path.exists(expected_file))
@@ -58,7 +58,7 @@ class TestFrostAPI(unittest.TestCase):
         mock_get.return_value = mock_resp
 
         with self.assertRaises(SystemExit) as cm:
-            dataSettApi.hent_og_lagre_data()
+            FrostBlindern.hent_og_lagre_data()
 
         self.assertEqual(cm.exception.code, 1)
 
