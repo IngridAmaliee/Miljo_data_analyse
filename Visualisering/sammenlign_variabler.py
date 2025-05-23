@@ -2,6 +2,7 @@ def analyser_skydekke_solskinn(data_path=None):
     import pandas as pd
     import matplotlib.pyplot as plt
     from sklearn.linear_model import LinearRegression
+    from sklearn.metrics import mean_squared_error, r2_score
     import os
 
     if data_path is None:
@@ -42,6 +43,12 @@ def analyser_skydekke_solskinn(data_path=None):
     model.fit(X, y)
     pred = model.predict(X)
     print(f"Regresjonskoeffisient: {model.coef_[0]:.2f}, Intercept: {model.intercept_:.2f}")
+
+    # Evaluer modellens ytelse
+    mse = mean_squared_error(y, pred)
+    r2 = r2_score(y, pred)
+    print(f"MSE: {mse:.2f}")
+    print(f"R2-score: {r2:.2f}")
 
     # Visualisering
     plt.figure(figsize=(8,5))
