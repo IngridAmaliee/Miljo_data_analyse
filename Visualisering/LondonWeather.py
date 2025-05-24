@@ -52,26 +52,24 @@ def vis_london_temp(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_lon
     )
     fig4.show()
 
-    # --- Prediktiv modell for mean_temp (5 år frem) med LightGBM og måned som feature ---
+def vis_london_prediksjon_5aar(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_london_weather.json"):
+    data = pd.read_json(json_fil)
+    data = data[data['date'] >= 20140101].copy()
+    data['date'] = pd.to_datetime(data['date'].astype(str), format='%Y%m%d', errors='coerce')
+    data = data.dropna(subset=['date'])
     data_monthly = data.set_index('date').resample('MS').mean(numeric_only=True).reset_index()
     data_monthly['tid'] = np.arange(len(data_monthly))
-    data_monthly['month'] = data_monthly['date'].dt.month  # Legg til måned som feature
-
+    data_monthly['month'] = data_monthly['date'].dt.month
     X = data_monthly[['tid', 'month']]
     y = data_monthly['mean_temp']
     model = LGBMRegressor(n_estimators=200)
     model.fit(X, y)
-
-    # Prediksjon for 5 år (60 måneder)
     future_tid = np.arange(len(data_monthly), len(data_monthly) + 60)
     last_date = data_monthly['date'].iloc[-1]
     future_dates = pd.date_range(last_date + pd.offsets.MonthBegin(1), periods=60, freq='MS')
     future_months = future_dates.month
-
     X_future = pd.DataFrame({'tid': future_tid, 'month': future_months})
     future_preds = model.predict(X_future)
-
-    # Plotly-visualisering av historisk og predikert mean_temp
     fig_pred = go.Figure()
     fig_pred.add_trace(go.Scatter(x=data_monthly['date'], y=data_monthly['mean_temp'], mode='lines', name='Historisk mean_temp'))
     fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds, mode='lines', name='Predikert mean_temp (5 år, LightGBM)', line=dict(dash='dash')))
@@ -81,3 +79,4 @@ def vis_london_temp(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_lon
 
 if __name__ == "__main__":
     vis_london_temp()
+    vis_london_prediksjon_5aar()
