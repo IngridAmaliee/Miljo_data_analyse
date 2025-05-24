@@ -5,9 +5,23 @@ from dotenv import load_dotenv
 import json
 
 def hent_og_lagre_data():
-    # Last inn miljøvariabler fra .env-filen
-    env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
-    load_dotenv(dotenv_path=env_path)
+    # Prøv flere vanlige plasseringer for .env
+    candidate_paths = [
+        os.path.abspath(os.path.join(os.getcwd(), '.env')),
+        os.path.abspath(os.path.join(os.getcwd(), '..', '.env')),
+        os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.env')),
+        os.path.abspath(os.path.join(os.path.dirname(__file__), '.env')),
+    ]
+    env_path = None
+    for path in candidate_paths:
+        if os.path.exists(path):
+            env_path = path
+            break
+    if env_path:
+        load_dotenv(dotenv_path=env_path)
+    else:
+        print("Fant ikke .env-fil i vanlige kataloger.")
+        exit(1)
 
     # Hent API-nøkkel
     api_key = os.getenv('API_KEY_FROST')
@@ -16,7 +30,7 @@ def hent_og_lagre_data():
         print("API-nøkkelen ble ikke funnet i .env-filen.")
         exit(1)
 
-    print("API-nøkkelen ble lastet inn!")
+    print(f"API-nøkkelen ble lastet inn fra: {env_path}")
 
     # Endepunkt og parametere
     endpoint = 'https://frost.met.no/observations/v0.jsonld'
