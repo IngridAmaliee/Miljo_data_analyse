@@ -32,13 +32,13 @@ def visualiser_og_analyser_mangler(data_path=None):
         print('Eksempel på rader med mangler:')
         print(missing_rows.head())
 
-    # Avanserte Pandas-metoder: melt for å vise hvor mangler finnes
+    # For å vise hvor mangler finnes
     melted = pd.melt(df.reset_index(), id_vars=['index'])
     melted_missing = melted[melted['value'].isnull()]
     print('Melted view av manglende verdier:')
     print(melted_missing.head())
 
-    # SQL-lignende spørring: Finn antall manglende verdier i hver kolonne
+    # Finn antall manglende verdier i hver kolonne
     query = """
     SELECT variable, COUNT(*) as missing_count
     FROM melted_missing
