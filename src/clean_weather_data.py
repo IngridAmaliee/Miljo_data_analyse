@@ -5,15 +5,27 @@ import pandas as pd
 import pandasql as psql
 import numpy as np
 import json
+import os
 
 def load_json_to_dataframe(file_path):
-     #Laster JSON-fil til en Pandas DataFrame.
+    """Laster JSON-fil til en Pandas DataFrame."""
+    if not isinstance(file_path, str):
+        raise TypeError("file_path må være en streng.")
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"Filen '{file_path}' ble ikke funnet.")
     with open(file_path, 'r') as file:
         data = json.load(file)
+    if not isinstance(data, list):
+        raise ValueError("JSON-filen må inneholde en liste med ordbøker.")
     return pd.DataFrame(data)
 
 def log_null_values(df, column):
-    #Logger rader der kolonnen inneholder None/NaN
+    """Logger rader der kolonnen inneholder None/NaN"""
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("df må være en Pandas DataFrame.")
+    if column not in df.columns:
+        raise ValueError(f"Kolonnen '{column}' finnes ikke i DataFrame.")
+    
     query = f"SELECT * FROM df WHERE {column} IS NULL"
     nulls = psql.sqldf(query, locals())
     if not nulls.empty:
@@ -23,15 +35,21 @@ def log_null_values(df, column):
         print(f"No NULL values found in '{column}'.")
 
 def calculate_bounds(df, column):
-    #Returnerer nedre og øvre grense for uteliggere basert på 5%–95% kvantiler.
+    """Returnerer nedre og øvre grense for uteliggere basert på 5%–95% kvantiler."""
+    if column not in df.columns:
+        raise ValueError(f"Kolonnen '{column}' finnes ikke i DataFrame.")
     return df[column].quantile(0.05), df[column].quantile(0.95)
 
 def replace_outliers_and_nulls(df, column, bounds=None):
-    # Erstatter uteliggere med gjennomsnitt, og NULL/NaN med gjennomsnitt (unntak: snow_depth i sommerhalvåret)
+    """Erstatter uteliggere og NULL/NaN med gjennomsnitt."""
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("df må være en Pandas DataFrame.")
+    if column not in df.columns:
+        raise ValueError(f"Kolonnen '{column}' finnes ikke i DataFrame.")
+    
     log_null_values(df, column)
 
     mean = round(np.mean(df[column].dropna()), 2)
-    # Bruk spesifikke grenser hvis oppgitt, ellers 5%-95% kvantiler
     if bounds and column in bounds:
         lower, upper = bounds[column]
     else:
@@ -44,20 +62,16 @@ def replace_outliers_and_nulls(df, column, bounds=None):
     else:
         print(f"No outliers found in '{column}'.")
 
-    # Håndter NULL/NAN
     if column == 'snow_depth' and 'date' in df.columns:
-        # Konverter dato til måned
         months = pd.to_datetime(df['date'], errors='coerce').dt.month
-        # Sett NULL til 0 for mars-november (3-11), ellers til mean
         is_null = df[column].isnull()
         sommer = is_null & months.between(3, 11)
         vinter = is_null & ~months.between(3, 11)
         df.loc[sommer, column] = 0
         df.loc[vinter, column] = mean
     else:
-        # Sett NULL/NAN til mean for alle andre kolonner
         df.loc[df[column].isnull(), column] = mean
-    # Sett uteliggere til gjennomsnitt
+
     df.loc[(df[column] < lower) | (df[column] > upper), column] = mean
     df[column] = df[column].round(2)
 
@@ -65,13 +79,17 @@ def replace_outliers_and_nulls(df, column, bounds=None):
     return df
 
 def remove_duplicate_and_invalid_dates(df, date_column='date'):
-    # Fjern rader med dupliserte datoer
+    """Fjerner dupliserte og ugyldige datoer."""
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("df må være en Pandas DataFrame.")
+    if date_column not in df.columns:
+        raise ValueError(f"Kolonnen '{date_column}' finnes ikke i DataFrame.")
+
     before = len(df)
     df = df.drop_duplicates(subset=[date_column])
     after = len(df)
     if before != after:
         print(f"Fjernet {before - after} rader med dupliserte datoer.")
-    # Fjern rader med ugyldige datoer
     try:
         valid_dates = pd.to_datetime(df[date_column], errors='coerce')
         invalid_mask = valid_dates.isnull()
@@ -83,16 +101,25 @@ def remove_duplicate_and_invalid_dates(df, date_column='date'):
     return df
 
 def clean_weather_dataframe(df, data_keys, bounds=None, date_column='date'):
-    # Fjern dupliserte og ugyldige datoer hvis kolonnen finnes
+    """Rensker og standardiserer DataFrame med værdata."""
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("df må være en Pandas DataFrame.")
+    if not isinstance(data_keys, list) or not all(isinstance(key, str) for key in data_keys):
+        raise TypeError("data_keys må være en liste med strenger.")
+    
     if date_column in df.columns:
         df = remove_duplicate_and_invalid_dates(df, date_column)
-    #Kjører rens på alle kolonner i `data_keys`.
     for key in data_keys:
         df = replace_outliers_and_nulls(df, key, bounds)
     return df
 
 def save_dataframe_to_json(df, output_file):
-    #Lagrer DataFrame til JSON-fil.
+    """Lagrer DataFrame til JSON-fil."""
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("df må være en Pandas DataFrame.")
+    if not isinstance(output_file, str):
+        raise TypeError("output_file må være en streng.")
+    
     with open(output_file, 'w') as f:
         json.dump(df.to_dict(orient='records'), f, indent=4)
     print(f"Updated data saved to {output_file}")
@@ -103,18 +130,18 @@ if __name__ == "__main__":
     output_path = "data/updated_london_weather.json"
     columns = ['cloud_cover', 'sunshine', 'global_radiation', 'max_temp', 'mean_temp',
                'min_temp', 'precipitation', 'pressure', "snow_depth"]
-    # Sett egne grenser for uteliggere per kolonne (eksempelverdier, tilpass etter behov)
     bounds = {
-        'max_temp': (-35, 40),           # Temperatur i London: -35 til 40°C
-        'min_temp': (-35, 30),           # Minimumstemperatur: -35 til 30°C
-        'mean_temp': (-30, 35),          # Døgnmiddeltemperatur: -30 til 35°C
-        'precipitation': (0, 100),       # Nedbør i mm/døgn: 0 til 100
-        'pressure': (950, 1050),         # Lufttrykk i hPa: 950 til 1050
-        'cloud_cover': (0, 100),         # Skydekke i prosent: 0 til 100
-        'sunshine': (0, 18),             # Soltimer pr døgn: 0 til 18
-        'global_radiation': (0, 3500),   # Stråling i Wh/m2: 0 til 3500
-        'snow_depth': (0, 100)           # Snødybde i cm: 0 til 100
+        'max_temp': (-35, 40),
+        'min_temp': (-35, 30),
+        'mean_temp': (-30, 35),
+        'precipitation': (0, 100),
+        'pressure': (950, 1050),
+        'cloud_cover': (0, 100),
+        'sunshine': (0, 18),
+        'global_radiation': (0, 3500),
+        'snow_depth': (0, 100)
     }
+
     df = load_json_to_dataframe(file_path)
     cleaned_df = clean_weather_dataframe(df, columns, bounds, date_column='date')
     save_dataframe_to_json(cleaned_df, output_path)
