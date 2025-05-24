@@ -30,7 +30,7 @@ def hent_og_lagre_data():
         print("API-nøkkelen ble ikke funnet i .env-filen.")
         exit(1)
 
-    print(f"API-nøkkelen ble lastet inn fra: {env_path}")
+    print("API-nøkkel funnet og data sett lastet inn!")
 
     # Endepunkt og parametere
     endpoint = 'https://frost.met.no/observations/v0.jsonld'
@@ -74,9 +74,11 @@ def hent_og_lagre_data():
 
     df = df.reset_index()
 
-    # Lagre JSON til fil
-    os.makedirs('data', exist_ok=True)
-    json_file_path = 'data/observations_data.json'
+    # Lagre JSON til riktig data-mappe (utenfor src)
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    data_dir = os.path.join(project_root, 'data')
+    os.makedirs(data_dir, exist_ok=True)
+    json_file_path = os.path.join(data_dir, 'observations_data.json')
     with open(json_file_path, 'w') as json_file:
         json.dump(json_data, json_file, indent=4)
 
