@@ -45,7 +45,7 @@ def visualiser_og_analyser_mangler(data_path=None):
     GROUP BY variable
     """
     result = psql.sqldf(query, locals())
-    print('SQL-lignende oversikt over mangler:')
+    print('Oversikt over mangler:')
     print(result)
 
 if __name__ == "__main__":
