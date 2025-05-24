@@ -20,18 +20,26 @@ else:
 
 
 import requests
+import os
+from dotenv import load_dotenv
 
+# Last inn .env fra src-mappen
+src_dir = os.path.dirname(os.path.abspath(__file__))
+dotenv_path = os.path.join(src_dir, '.env')
+load_dotenv(dotenv_path)
+API_KEY_FROST = os.getenv('API_KEY_FROST')
 # Frost API-endepunkt for kilder
 endpoint = 'https://frost.met.no/sources/v0.jsonld'
 
 # Utfør HTTP GET-forespørsel
-r = requests.get(endpoint, auth=("f9d56ccf-fe79-45ff-970e-959f8e0de1e5", ""))
+r = requests.get(endpoint, auth=(API_KEY_FROST, ""))
+
+
 
 # Sjekk om forespørselen var vellykket og hent JSON-data
 if r.status_code == 200:
     json = r.json()
     sources = json['data']  # Listen over kilder
-    
     # Filtrer kildene for å finne de som har "oslo" i navnet
     for source in sources:
         source_name = source.get('name', '').lower()  # Hent kildens navn og gjør det til små bokstaver
@@ -39,8 +47,6 @@ if r.status_code == 200:
             print(f"Source ID: {source['id']}, Source Name: {source['name']}")
 else:
     print(f"Error! Returned status code {r.status_code}")
-
-
 
 
 '''
