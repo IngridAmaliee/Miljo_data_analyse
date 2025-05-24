@@ -1,12 +1,16 @@
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
-import numpy as np
-from xgboost import XGBRegressor
 import plotly.io as pio
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+from xgboost import XGBRegressor
 pio.renderers.default = "browser"
 
-def vis_boston_weather(csv_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\BostonData2.csv"):
+def vis_boston_weather(csv_fil="data/bostonData2.csv"):
     # Les inn datafilen
     data = pd.read_csv(csv_fil)
     data.fillna(data.mean(numeric_only=True), inplace=True)
@@ -69,5 +73,46 @@ def vis_boston_weather(csv_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\BostonDat
 
     print("Analyse fullført. Grafene er vist :)")
 
+
+
+
+
+#Her kommer regresjonsanalyse av været i Boston
+
+
+
+
+
+#Her kommer boxplot av Boston Weather
+def boxplot_mnd_gjennomsnitt(csv_fil):
+    # Les inn data
+    data = pd.read_csv(csv_fil)
+
+    # Konverter 'time' til datetime
+    data['time'] = pd.to_datetime(data['time'])
+
+    # Lag kolonner for år og måned
+    data['year'] = data['time'].dt.year
+    data['month'] = data['time'].dt.month
+
+    # Filtrer data for år 2014 og fremover
+    data = data[data['year'] >= 2014]
+
+    # Beregn gjennomsnittlig temperatur per måned per år
+    monthly_avg = data.groupby(['year', 'month'])['tavg'].mean().reset_index()
+
+    # Lag boxplot som viser fordelingen av gjennomsnittstemperatur per måned over flere år
+    plt.figure(figsize=(10,6))
+    sns.boxplot(x='month', y='tavg', data=monthly_avg)
+    plt.title('Boxplot av gjennomsnittlig temperatur per måned (2014 og fremover)')
+    plt.xlabel('Måned')
+    plt.ylabel('Gjennomsnittstemperatur (tavg)')
+    plt.show()
+
+    print("Boxplot av gjennomsnittlig temperatur per måned fra 2014 er vist.")
+
+
 if __name__ == "__main__":
-    vis_boston_weather()
+    csv_fil = "data/BostonData2.csv"
+    vis_boston_weather(csv_fil)
+    boxplot_mnd_gjennomsnitt(csv_fil)
