@@ -11,35 +11,53 @@ from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
 pio.renderers.default = "browser"
 
+
+
+
+
 def vis_boston_weather(csv_fil="data/bostonData2.csv"):
-    # Les inn datafilen
+    """
+    Leser inn værdata fra Boston og visualiserer temperatur, nedbør og vind
+    ved hjelp av interaktive grafer.
+
+    Parametre:
+    csv_fil (str): Filsti til CSV-filen med værdata.
+    """
+    # Leser inn datafilen
     data = pd.read_csv(csv_fil)
-    data.fillna(data.mean(numeric_only=True), inplace=True)
     data['time'] = pd.to_datetime(data['time'])
+    data.drop_duplicates(inplace=True)
+    data = data[(data['time'].dt.year >= 2014)]
+    data.fillna(data.mean(numeric_only=True), inplace=True)
 
     # Temperaturutvikling
-    fig1 = px.line(data, x='time', y='tavg', title="Gjennomsnittlig temperatur over tid Boston",
+    fig1 = px.line(data, x='time', y='tavg',
+                   title="Gjennomsnittlig temperatur over tid Boston",
                    labels={'tavg': 'Temperatur (°C)', 'time': 'Dato'})
     fig1.show()
 
     # Månedlig gjennomsnittlig nedbørsmengde (barplot)
     data_monthly = data.set_index('time').resample('MS').mean(numeric_only=True).reset_index()
-    fig2 = px.bar(data_monthly, x='time', y='prcp', title="Månedlig gjennomsnittlig nedbør Boston",
+    fig2 = px.bar(data_monthly, x='time', y='prcp',
+                  title="Månedlig gjennomsnittlig nedbør Boston",
                   labels={'prcp': 'Nedbør (mm)', 'time': 'Måned'})
     fig2.show()
 
     # Vindhastighet
-    fig3 = px.line(data, x='time', y='wspd', title="Vindhastighet over tid Boston",
+    fig3 = px.line(data, x='time', y='wspd',
+                   title="Vindhastighet over tid Boston",
                    labels={'wspd': 'Vindhastighet (km/t)', 'time': 'Dato'})
     fig3.show()
 
     # Månedlig gjennomsnittstemperatur
-    fig4 = px.line(data_monthly, x='time', y='tavg', title="Månedlig gjennomsnittstemperatur Boston",
+    fig4 = px.line(data_monthly, x='time', y='tavg',
+                   title="Månedlig gjennomsnittstemperatur Boston",
                    labels={'tavg': 'Temperatur (°C)', 'time': 'Måned'})
     fig4.show()
 
     # Histogram for temperaturfordeling
-    fig5 = px.histogram(data, x='tavg', nbins=30, title="Temperaturfordeling Boston",
+    fig5 = px.histogram(data, x='tavg', nbins=30,
+                        title="Temperaturfordeling Boston",
                         labels={'tavg': 'Temperatur (°C)'})
     fig5.update_traces(marker_line_color='black', marker_line_width=1)
     fig5.update_layout(yaxis_title="Antall dager")
@@ -48,7 +66,7 @@ def vis_boston_weather(csv_fil="data/bostonData2.csv"):
     # --- Prediktiv modell for tavg (5 år frem) med XGBoost og måned som feature ---
     monthly = data.set_index('time').resample('MS').mean(numeric_only=True).reset_index()
     monthly['tid'] = np.arange(len(monthly))
-    monthly['month'] = monthly['time'].dt.month  # Legg til måned som feature
+    monthly['month'] = monthly['time'].dt.month
 
     X = monthly[['tid', 'month']]
     y = monthly['tavg']
@@ -58,16 +76,19 @@ def vis_boston_weather(csv_fil="data/bostonData2.csv"):
     # Prediksjon for 5 år (60 måneder)
     future_tid = np.arange(len(monthly), len(monthly) + 60)
     last_date = monthly['time'].iloc[-1]
-    future_dates = pd.date_range(last_date + pd.offsets.MonthBegin(1), periods=60, freq='MS')
+    future_dates = pd.date_range(last_date + pd.offsets.MonthBegin(1),
+                                  periods=60, freq='MS')
     future_months = future_dates.month
-
     X_future = pd.DataFrame({'tid': future_tid, 'month': future_months})
     future_preds = model.predict(X_future)
 
-    # Plotly-visualisering av historisk og predikert tavg
+    # Visualisering av historisk og predikert temperatur
     fig_pred = go.Figure()
-    fig_pred.add_trace(go.Scatter(x=monthly['time'], y=monthly['tavg'], mode='lines', name='Historisk tavg'))
-    fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds, mode='lines', name='Predikert tavg (5 år, XGBoost)', line=dict(dash='dash')))
+    fig_pred.add_trace(go.Scatter(x=monthly['time'], y=monthly['tavg'],
+                                  mode='lines', name='Historisk tavg'))
+    fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds,
+                                  mode='lines', name='Predikert tavg (5 år, XGBoost)',
+                                  line=dict(dash='dash')))
     fig_pred.update_layout(title='Prediksjon av gjennomsnittstemperatur i Boston (neste 5 år, XGBoost, månedlig)',
                            xaxis_title='Dato', yaxis_title='Gjennomsnittstemperatur (tavg)')
     fig_pred.show()
@@ -78,27 +99,39 @@ def vis_boston_weather(csv_fil="data/bostonData2.csv"):
 
 
 
-
-#Her kommer regresjonsanalyse av været i Boston med lineær regresjon fra 2014 og 5 år frem i tid
 def regresjonsanalyse_boston(csv_fil):
+    """
+    Utfører lineær regresjonsanalyse på månedlig gjennomsnittstemperatur
+    fra 2014 og frem til siste tilgjengelige dato, og predikerer 
+    temperaturutviklingen 5 år frem i tid.
+
+    Evaluerer modellen med R²-score og MSE, og visualiserer både
+    historiske verdier, gjennomsnitt og fremtidig prediksjon.
+
+    Parametre:
+    csv_fil (str): Filsti til CSV-filen med værdata.
+    """
+    # Leser inn datafilen og filtrerer fra 2014
     data = pd.read_csv(csv_fil)
     data['time'] = pd.to_datetime(data['time'])
     data = data[data['time'] >= '2014-01-01']
+    data.drop_duplicates(inplace=True)
+    data.fillna(data.mean(numeric_only=True), inplace=True)
     siste_dato = data['time'].max()
 
-    # Beregn månedlig gjennomsnitt
+    # Beregner månedlig gjennomsnitt og lager tidsvariabel
     monthly = data.set_index('time').resample('MS') \
         .mean(numeric_only=True).reset_index()
     monthly['tid'] = np.arange(len(monthly))
     X = monthly[['tid']]
     y = monthly['tavg']
 
-    # Del data i trening og test
+    # Deler data i trening og test
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
 
-    # Tren modell og evaluer
+    # Trener lineær regresjonsmodell og evaluerer
     linreg = LinearRegression()
     linreg.fit(X_train, y_train)
     y_pred_test = linreg.predict(X_test)
@@ -107,7 +140,7 @@ def regresjonsanalyse_boston(csv_fil):
     print(f"R²-score (testdata): {r2:.3f}")
     print(f"Mean Squared Error (testdata): {mse:.3f}")
 
-    # Lag fremtidig datasett
+    # Predikerer 5 år frem i tid (60 måneder)
     future_tid = np.arange(len(monthly), len(monthly) + 60)
     future_dates = pd.date_range(
         start=siste_dato + pd.offsets.MonthBegin(1),
@@ -116,7 +149,7 @@ def regresjonsanalyse_boston(csv_fil):
     X_future = pd.DataFrame({'tid': future_tid})
     y_future_pred = linreg.predict(X_future)
 
-    # Visualisering
+    # Visualiserer historisk tavg, historisk snitt og prediksjon
     fig_linreg = go.Figure()
     fig_linreg.add_trace(go.Scatter(
         x=monthly['time'], y=y, mode='lines', name='Historisk tavg'
@@ -147,34 +180,39 @@ def regresjonsanalyse_boston(csv_fil):
 
 
 
-
-#Her kommer boxplot av Boston Weather
 def boxplot_mnd_gjennomsnitt(csv_fil):
-    # Les inn data
+    """
+    Lager et boxplot som viser fordelingen av gjennomsnittstemperatur per 
+    måned fra 2014 og fremover. Gir innsikt i sesongvariasjon og spredning.
+
+    Parametre:
+    csv_fil (str): Filsti til CSV-filen med værdata.
+    """
+    # Leser inn datafilen og konverterer dato
     data = pd.read_csv(csv_fil)
-
-    # Konverter 'time' til datetime
     data['time'] = pd.to_datetime(data['time'])
+    data.drop_duplicates(inplace=True)
+    data = data[data['time'].dt.year >= 2014]
+    data.fillna(data.mean(numeric_only=True), inplace=True)
 
-    # Lag kolonner for år og måned
+    # Ekstraherer år og måned
     data['year'] = data['time'].dt.year
-    data['month'] = data['time'].dt.month
+    data['month'] = data['time'].dt.month_name(locale='no_NO').str[:3].str.capitalize()
 
-    # Filtrer data for år 2014 og fremover
-    data = data[data['year'] >= 2014]
-
-    # Beregn gjennomsnittlig temperatur per måned per år
+    # Beregner månedlige gjennomsnitt og lager boxplot
     monthly_avg = data.groupby(['year', 'month'])['tavg'].mean().reset_index()
-
-    # Lag boxplot som viser fordelingen av gjennomsnittstemperatur per måned over flere år
-    plt.figure(figsize=(10,6))
-    sns.boxplot(x='month', y='tavg', data=monthly_avg)
+    ordered_months = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun",
+                      "Jul", "Aug", "Sep", "Okt", "Nov", "Des"]
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='month', y='tavg', data=monthly_avg,
+                order=ordered_months)
     plt.title('Boxplot av gjennomsnittlig temperatur per måned (2014 og fremover)')
     plt.xlabel('Måned')
     plt.ylabel('Gjennomsnittstemperatur (tavg)')
     plt.show()
 
     print("Boxplot av gjennomsnittlig temperatur per måned fra 2014 er vist.")
+
 
 
 
