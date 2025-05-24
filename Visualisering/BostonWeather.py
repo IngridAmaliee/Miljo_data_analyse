@@ -7,6 +7,7 @@ import plotly.graph_objects as go
 import plotly.io as pio
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
 pio.renderers.default = "browser"
 
@@ -77,7 +78,71 @@ def vis_boston_weather(csv_fil="data/bostonData2.csv"):
 
 
 
-#Her kommer regresjonsanalyse av været i Boston
+
+#Her kommer regresjonsanalyse av været i Boston med lineær regresjon fra 2014 og 5 år frem i tid
+def regresjonsanalyse_boston(csv_fil):
+    data = pd.read_csv(csv_fil)
+    data['time'] = pd.to_datetime(data['time'])
+    data = data[data['time'] >= '2014-01-01']
+    siste_dato = data['time'].max()
+
+    # Beregn månedlig gjennomsnitt
+    monthly = data.set_index('time').resample('MS') \
+        .mean(numeric_only=True).reset_index()
+    monthly['tid'] = np.arange(len(monthly))
+    X = monthly[['tid']]
+    y = monthly['tavg']
+
+    # Del data i trening og test
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+
+    # Tren modell og evaluer
+    linreg = LinearRegression()
+    linreg.fit(X_train, y_train)
+    y_pred_test = linreg.predict(X_test)
+    r2 = r2_score(y_test, y_pred_test)
+    mse = mean_squared_error(y_test, y_pred_test)
+    print(f"R²-score (testdata): {r2:.3f}")
+    print(f"Mean Squared Error (testdata): {mse:.3f}")
+
+    # Lag fremtidig datasett
+    future_tid = np.arange(len(monthly), len(monthly) + 60)
+    future_dates = pd.date_range(
+        start=siste_dato + pd.offsets.MonthBegin(1),
+        periods=60, freq='MS'
+    )
+    X_future = pd.DataFrame({'tid': future_tid})
+    y_future_pred = linreg.predict(X_future)
+
+    # Visualisering
+    fig_linreg = go.Figure()
+    fig_linreg.add_trace(go.Scatter(
+        x=monthly['time'], y=y, mode='lines', name='Historisk tavg'
+    ))
+    fig_linreg.add_trace(go.Scatter(
+        x=[monthly['time'].min(), siste_dato],
+        y=[y.mean(), y.mean()],
+        mode='lines',
+        name='Historisk gjennomsnitt (2014–2023)',
+        line=dict(color='green', dash='dash')
+    ))
+    fig_linreg.add_trace(go.Scatter(
+        x=future_dates, y=y_future_pred, mode='lines',
+        name='Predikert tavg (Lineær regresjon)',
+        line=dict(color='red', dash='dot')
+    ))
+    fig_linreg.update_layout(
+        title='Lineær regresjonsanalyse: Temperatur i Boston '
+              '(fra 2023 + 5 år frem)',
+        xaxis_title='Dato',
+        yaxis_title='Gjennomsnittstemperatur (tavg)'
+    )
+    fig_linreg.show()
+
+    print("Lineær regresjonsanalyse fullført.")
+
 
 
 
@@ -112,7 +177,10 @@ def boxplot_mnd_gjennomsnitt(csv_fil):
     print("Boxplot av gjennomsnittlig temperatur per måned fra 2014 er vist.")
 
 
+
+
 if __name__ == "__main__":
     csv_fil = "data/BostonData2.csv"
     vis_boston_weather(csv_fil)
+    regresjonsanalyse_boston(csv_fil)
     boxplot_mnd_gjennomsnitt(csv_fil)
