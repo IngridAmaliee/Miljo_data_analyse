@@ -63,7 +63,49 @@ def vis_boston_weather(csv_fil="data/bostonData2.csv"):
     fig5.update_layout(yaxis_title="Antall dager")
     fig5.show()
 
-    # --- Prediktiv modell for tavg (5 år frem) med XGBoost og måned som feature ---
+    print("Analyse fullført. Grafene er vist :)")
+
+
+def boxplot_mnd_gjennomsnitt(csv_fil):
+    """
+    Lager et boxplot som viser fordelingen av gjennomsnittstemperatur per 
+    måned fra 2014 og fremover. Gir innsikt i sesongvariasjon og spredning.
+
+    Parametre:
+    csv_fil (str): Filsti til CSV-filen med værdata.
+    """
+    # Leser inn datafilen og konverterer dato
+    data = pd.read_csv(csv_fil)
+    data['time'] = pd.to_datetime(data['time'])
+    data.drop_duplicates(inplace=True)
+    data = data[data['time'].dt.year >= 2014]
+    data.fillna(data.mean(numeric_only=True), inplace=True)
+
+    # Ekstraherer år og måned
+    data['year'] = data['time'].dt.year
+    data['month'] = data['time'].dt.month_name(locale='no_NO').str[:3].str.capitalize()
+
+    # Beregner månedlige gjennomsnitt og lager boxplot
+    monthly_avg = data.groupby(['year', 'month'])['tavg'].mean().reset_index()
+    ordered_months = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun",
+                      "Jul", "Aug", "Sep", "Okt", "Nov", "Des"]
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='month', y='tavg', data=monthly_avg,
+                order=ordered_months)
+    plt.title('Boxplot av gjennomsnittlig temperatur per måned (2014 og fremover)')
+    plt.xlabel('Måned')
+    plt.ylabel('Gjennomsnittstemperatur (tavg)')
+    plt.show()
+
+    print("Boxplot av gjennomsnittlig temperatur per måned fra 2014 er vist.")
+
+
+
+def vis_boston_prediksjon_5aar(csv_fil="data/bostonData2.csv"):
+    data = pd.read_csv(csv_fil)
+    data['time'] = pd.to_datetime(data['time'])
+    data = data[(data['time'].dt.year >= 2014)]
+    data.fillna(data.mean(numeric_only=True), inplace=True)
     monthly = data.set_index('time').resample('MS').mean(numeric_only=True).reset_index()
     monthly['tid'] = np.arange(len(monthly))
     monthly['month'] = monthly['time'].dt.month
@@ -92,11 +134,6 @@ def vis_boston_weather(csv_fil="data/bostonData2.csv"):
     fig_pred.update_layout(title='Prediksjon av gjennomsnittstemperatur i Boston (neste 5 år, XGBoost, månedlig)',
                            xaxis_title='Dato', yaxis_title='Gjennomsnittstemperatur (tavg)')
     fig_pred.show()
-
-    print("Analyse fullført. Grafene er vist :)")
-
-
-
 
 
 def regresjonsanalyse_boston(csv_fil):
@@ -178,40 +215,6 @@ def regresjonsanalyse_boston(csv_fil):
 
 
 
-
-
-def boxplot_mnd_gjennomsnitt(csv_fil):
-    """
-    Lager et boxplot som viser fordelingen av gjennomsnittstemperatur per 
-    måned fra 2014 og fremover. Gir innsikt i sesongvariasjon og spredning.
-
-    Parametre:
-    csv_fil (str): Filsti til CSV-filen med værdata.
-    """
-    # Leser inn datafilen og konverterer dato
-    data = pd.read_csv(csv_fil)
-    data['time'] = pd.to_datetime(data['time'])
-    data.drop_duplicates(inplace=True)
-    data = data[data['time'].dt.year >= 2014]
-    data.fillna(data.mean(numeric_only=True), inplace=True)
-
-    # Ekstraherer år og måned
-    data['year'] = data['time'].dt.year
-    data['month'] = data['time'].dt.month_name(locale='no_NO').str[:3].str.capitalize()
-
-    # Beregner månedlige gjennomsnitt og lager boxplot
-    monthly_avg = data.groupby(['year', 'month'])['tavg'].mean().reset_index()
-    ordered_months = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun",
-                      "Jul", "Aug", "Sep", "Okt", "Nov", "Des"]
-    plt.figure(figsize=(10, 6))
-    sns.boxplot(x='month', y='tavg', data=monthly_avg,
-                order=ordered_months)
-    plt.title('Boxplot av gjennomsnittlig temperatur per måned (2014 og fremover)')
-    plt.xlabel('Måned')
-    plt.ylabel('Gjennomsnittstemperatur (tavg)')
-    plt.show()
-
-    print("Boxplot av gjennomsnittlig temperatur per måned fra 2014 er vist.")
 
 
 
