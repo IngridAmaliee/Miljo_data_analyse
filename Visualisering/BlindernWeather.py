@@ -9,6 +9,9 @@ pio.renderers.default = "browser"
 import pandas as pd
 import xgboost as xgb
 from pandas.tseries.frequencies import to_offset
+import numpy as np
+import plotly.graph_objects as go
+from sklearn.linear_model import LinearRegression
 
 def vis_blindern_weather(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\observations_data.json", temp_dir=None):
     hent_temp = HentTemp()
@@ -69,6 +72,51 @@ def vis_blindern_weather(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\observ
                             print(f"Mappen '{temp_path}' er slettet.")
                         except Exception as e:
                             print(f"Kunne ikke slette mappen '{temp_path}': {e}")
+
+def regresjonsanalyse_med_plot(x, y):
+    """
+    Utfører en enkel lineær regresjonsanalyse og viser resultatene på en graf.
+
+    Parametere:
+    - x: Liste eller numpy-array med uavhengige variabler (f.eks. datoer som tall).
+    - y: Liste eller numpy-array med avhengige variabler (f.eks. temperaturer).
+
+    Returnerer:
+    - Modellobjektet for regresjonen.
+    - Plotly-figuren med scatterplot og trendlinje.
+    """
+    # Konverter x til en 2D-array hvis den ikke allerede er det
+    x = np.array(x).reshape(-1, 1)
+    y = np.array(y)
+
+    # Opprett og tren regresjonsmodellen
+    model = LinearRegression()
+    model.fit(x, y)
+
+    # Prediksjon basert på input x
+    y_pred = model.predict(x)
+
+    # Opprett scatterplot og trendlinje med Plotly
+    fig = go.Figure()
+
+    # Legg til scatterplot for de faktiske dataene
+    fig.add_trace(go.Scatter(x=x.flatten(), y=y, mode='markers', name='Data'))
+
+    # Legg til trendlinje
+    fig.add_trace(go.Scatter(x=x.flatten(), y=y_pred, mode='lines', name='Trendlinje'))
+
+    # Tilpass layout
+    fig.update_layout(
+        title="Regresjonsanalyse med Scatterplot og Trendlinje",
+        xaxis_title="Uavhengig variabel (x)",
+        yaxis_title="Avhengig variabel (y)",
+        template="plotly_white"
+    )
+
+    # Vis grafen
+    fig.show()
+
+    return model, fig
 
 if __name__ == "__main__":
     # Slett mappen '__pycache__' etter kjøring hvis den finnes
