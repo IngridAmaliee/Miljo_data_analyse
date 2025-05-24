@@ -46,14 +46,21 @@ def replace_outliers_and_nulls(df, column, bounds=None):
         raise TypeError("df må være en Pandas DataFrame.")
     if column not in df.columns:
         raise ValueError(f"Kolonnen '{column}' finnes ikke i DataFrame.")
-    
+
     log_null_values(df, column)
 
-    mean = round(np.mean(df[column].dropna()), 2)
+    # Finn grenser
     if bounds and column in bounds:
         lower, upper = bounds[column]
     else:
         lower, upper = calculate_bounds(df, column)
+
+    # Beregn mean basert på gyldige verdier (ikke uteliggere og ikke NaN)
+    valid_values = df[(df[column] >= lower) & (df[column] <= upper)][column].dropna()
+    if valid_values.empty:
+        raise ValueError(f"Ingen gyldige verdier igjen i '{column}' for å beregne gjennomsnitt.")
+    
+    mean = round(valid_values.mean(), 2)
 
     outliers = df[(df[column] < lower) | (df[column] > upper)]
     if not outliers.empty:
@@ -77,6 +84,7 @@ def replace_outliers_and_nulls(df, column, bounds=None):
 
     print(f"Replaced NULLs in '{column}' (med sesonglogikk for snow_depth) og outliers med mean value: {mean}")
     return df
+
 
 def remove_duplicate_and_invalid_dates(df, date_column='date'):
     """Fjerner dupliserte og ugyldige datoer."""

@@ -1,124 +1,138 @@
 import pandas as pd
 import json
+import os
 
 class HentTemp:
     def __init__(self):
         pass
 
-    # Metode 1: Hente tmin, tmax og tavg fra CSV-fil
     def get_min_max_temperature(self, file_path):
+        """
+        Leser CSV-fil og returnerer kolonnene time, tmin, tmax og tavg.
+        """
+        if not isinstance(file_path, str) or not os.path.exists(file_path):
+            raise FileNotFoundError(f"Filen finnes ikke: {file_path}")
+        
         try:
-            # Les CSV-filen til en Pandas DataFrame og hopp over problematiske linjer
             df = pd.read_csv(file_path, on_bad_lines='skip')
-            
-            # Hent ut time, tmin, tmax og tavg kolonnene
-            tmin_tmax_tavg = df[['time', 'tmin', 'tmax', 'tavg']]
-            
-            # Returner DataFrame med 'time', 'tmin', 'tmax', og 'tavg'
-            return tmin_tmax_tavg
+
+            required_cols = {'time', 'tmin', 'tmax', 'tavg'}
+            if not required_cols.issubset(df.columns):
+                raise ValueError(f"CSV mangler en eller flere av kolonnene: {required_cols}")
+
+            return df[['time', 'tmin', 'tmax', 'tavg']]
 
         except Exception as e:
-            print(f"Error loading file: {e}")
+            print(f"Feil ved innlasting av CSV-fil: {e}")
             return None
 
-    # Metode 2: Hente max, mean og min temperatur fra JSON-fil
     def get_temperatures_from_json(self, file_path):
+        """
+        Leser JSON-fil og returnerer temperaturverdier (max, mean, min).
+        """
+        if not isinstance(file_path, str) or not os.path.exists(file_path):
+            raise FileNotFoundError(f"Filen finnes ikke: {file_path}")
+
         try:
-            # Åpne og last inn JSON-data fra filen
             with open(file_path, 'r') as file:
                 data = json.load(file)
-            
-            # Sjekk om data er en liste (som kan inneholde flere objekter)
+
             if isinstance(data, list):
                 temperatures = []
                 for entry in data:
-                    # Hent ut max_temp, mean_temp og min_temp fra hvert objekt i listen
                     temp_data = {
                         "max_temp": entry.get("max_temp"),
                         "mean_temp": entry.get("mean_temp"),
                         "min_temp": entry.get("min_temp")
                     }
                     temperatures.append(temp_data)
-            else:
-                # Hvis data ikke er en liste, hent bare én verdi (som tidligere)
+            elif isinstance(data, dict):
                 temperatures = {
                     "max_temp": data.get("max_temp"),
                     "mean_temp": data.get("mean_temp"),
                     "min_temp": data.get("min_temp")
                 }
+            else:
+                raise ValueError("JSON-formatet er ukjent.")
 
-            # Returner temperaturene
             return temperatures
-        
-        except Exception as e:
-            print(f"Error loading file: {e}")
-            return None
 
-    # Metode 3: Hente verdien til 'mean_k(air_temperature P1D)' og referencetime
+        except json.JSONDecodeError:
+            print("JSON-filen har feil format eller er korrupt.")
+        except Exception as e:
+            print(f"Feil ved lesing av JSON: {e}")
+        return None
+
     def get_mean_air_temperature_and_reference_time(self, file_path):
+        """
+        Henter 'mean_k(air_temperature P1D)' og 'referenceTime' fra observations-data.
+        """
+        if not isinstance(file_path, str) or not os.path.exists(file_path):
+            raise FileNotFoundError(f"Filen finnes ikke: {file_path}")
+
         try:
-            # Åpne og last inn JSON-data fra filen
             with open(file_path, 'r') as file:
                 data = json.load(file)
-            
-            # Sjekk om 'data'-feltet finnes i JSON
+
             if 'data' not in data:
                 raise ValueError("JSON-filen inneholder ikke 'data'-feltet.")
-            
-            # Iterer gjennom 'data'-feltet og hent verdien for 'mean_k(air_temperature P1D)' og 'referenceTime'
+
             results = []
             for entry in data['data']:
                 if 'referenceTime' in entry and 'observations' in entry:
-                    for observation in entry['observations']:
-                        if 'elementId' in observation and observation['elementId'] == 'mean_k(air_temperature P1D)':
-                            if 'value' in observation:
+                    for obs in entry['observations']:
+                        if obs.get('elementId') == 'mean_k(air_temperature P1D)':
+                            value = obs.get('value')
+                            if value is not None:
                                 results.append({
                                     "referenceTime": entry['referenceTime'],
-                                    "value": observation['value']
+                                    "value": value
                                 })
                             else:
-                                print(f"Advarsel: 'value' mangler i observasjonen: {observation}")
+                                print(f"⚠️ Advarsel: 'value' mangler i observasjonen: {obs}")
                 else:
-                    print(f"Advarsel: Manglende 'referenceTime' eller 'observations' i oppføringen: {entry}")
-            
-            # Returner listen med resultater
+                    print(f"⚠️ Advarsel: Manglende 'referenceTime' eller 'observations' i oppføringen.")
+
             return results
 
-        except FileNotFoundError:
-            print(f"Filen ble ikke funnet: {file_path}")
         except json.JSONDecodeError:
             print("JSON-filen har feil format eller er korrupt.")
         except ValueError as ve:
-            print(ve)
+            print(f"{ve}")
         except Exception as e:
             print(f"En uventet feil oppstod: {e}")
         return None
 
-# Hovedprogram for testing
 if __name__ == "__main__":
     hent_temp = HentTemp()
 
-    # Test get_min_max_temperature
-    csv_file_path = r'C:\anvendt_prog\Anvendt_prosjekt\data\bostonData2.csv'
+    # Test 1 – CSV
+    csv_file_path = "data/bostonData2.csv"
+    print(f"\n🔍 Leser temperaturdata fra CSV: {csv_file_path}")
     tmin_tmax_tavg = hent_temp.get_min_max_temperature(csv_file_path)
     if tmin_tmax_tavg is not None:
-        print("Data fra CSV:")
-        print(tmin_tmax_tavg)
+        print("CSV-data funnet:")
+        print(tmin_tmax_tavg.head())
+    else:
+        print("Fant ikke gyldige CSV-data.")
 
-    # Test get_temperatures_from_json
-    json_file_path = r'C:\anvendt_prog\Anvendt_prosjekt\data\updated_london_weather.json'
+    # Test 2 – Temperaturer fra JSON
+    json_file_path = "data/updated_london_weather.json"
+    print(f"\nLeser temperaturer fra JSON: {json_file_path}")
     temperatures = hent_temp.get_temperatures_from_json(json_file_path)
     if temperatures is not None:
         print("Temperaturer fra JSON:")
-        print(temperatures)
+        print(temperatures[:3] if isinstance(temperatures, list) else temperatures)
+    else:
+        print("Fant ikke gyldige temperaturer i JSON.")
 
-    # Test get_mean_air_temperature_and_reference_time
-    observations_file_path = r'C:\anvendt_prog\Anvendt_prosjekt\data\observations_data.json'
+    # Test 3 – Observasjoner
+    observations_file_path = "data/observations_data.json"
+    print(f"\nLeser observasjoner fra: {observations_file_path}")
     results = hent_temp.get_mean_air_temperature_and_reference_time(observations_file_path)
     if results:
-        print("Resultater hentet:")
-        for result in results:
+        print(f"{len(results)} observasjoner funnet:")
+        for result in results[:5]:  # skriv ut de første 5
             print(f"ReferenceTime: {result['referenceTime']}, Value: {result['value']}")
     else:
-        print("Ingen data ble funnet.")
-
+        print("Fant ingen observasjoner.")
