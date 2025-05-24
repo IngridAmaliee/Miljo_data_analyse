@@ -14,7 +14,7 @@ import numpy as np
 import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
 
-def vis_blindern_weather(json_fil=r"/Users/evinehfagerhaug/Library/Mobile Documents/com~apple~CloudDocs/Downloads/TDT4114/Miljo_data_analyse/data/observations_data.json", temp_dir=None):
+def vis_blindern_weather(json_fil="data/observations_data.json", temp_dir=None):
     hent_temp = HentTemp()
     results = hent_temp.get_mean_air_temperature_and_reference_time(json_fil)
     if results and len(results) > 0:
