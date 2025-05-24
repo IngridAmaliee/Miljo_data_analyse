@@ -7,13 +7,14 @@ import plotly.express as px
 import plotly.io as pio
 pio.renderers.default = "browser"
 import pandas as pd
+from datetime import timedelta
 import xgboost as xgb
 from pandas.tseries.frequencies import to_offset
 import numpy as np
 import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
 
-def vis_blindern_weather(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\observations_data.json", temp_dir=None):
+def vis_blindern_weather(json_fil=r"/Users/evinehfagerhaug/Library/Mobile Documents/com~apple~CloudDocs/Downloads/TDT4114/Miljo_data_analyse/data/observations_data.json", temp_dir=None):
     hent_temp = HentTemp()
     results = hent_temp.get_mean_air_temperature_and_reference_time(json_fil)
     if results and len(results) > 0:
@@ -31,7 +32,7 @@ def vis_blindern_weather(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\observ
             # --- Prediktiv visualisering 5 år frem i tid med XGBoost (med sesongvariasjon) ---
             # Forbered data
             df_pred = df.set_index('referenceTime').asfreq('D')
-            df_pred = df_pred.fillna(method='ffill')
+            df_pred = df_pred.ffill()
             df_pred = df_pred.reset_index()
             df_pred['days'] = (df_pred['referenceTime'] - df_pred['referenceTime'].min()).dt.days
             df_pred['dayofyear'] = df_pred['referenceTime'].dt.dayofyear
@@ -73,51 +74,87 @@ def vis_blindern_weather(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\observ
                         except Exception as e:
                             print(f"Kunne ikke slette mappen '{temp_path}': {e}")
 
-def regresjonsanalyse_med_plot(x, y):
-    """
-    Utfører en enkel lineær regresjonsanalyse og viser resultatene på en graf.
+def vis_blindern_weather_with_extended_regression(json_fil="data/observations_data.json", temp_dir="__pycache__"):
+    hent_temp = HentTemp()
+    results = hent_temp.get_mean_air_temperature_and_reference_time(json_fil)
+    
+    if not results or len(results) == 0:
+        print("Ingen temperaturdata funnet.")
+        return
 
-    Parametere:
-    - x: Liste eller numpy-array med uavhengige variabler (f.eks. datoer som tall).
-    - y: Liste eller numpy-array med avhengige variabler (f.eks. temperaturer).
+    df = pd.DataFrame(results)
+    df['referenceTime'] = pd.to_datetime(df['referenceTime'])
+    df = df[df['referenceTime'] >= pd.Timestamp('2014-01-01', tz='UTC')]
 
-    Returnerer:
-    - Modellobjektet for regresjonen.
-    - Plotly-figuren med scatterplot og trendlinje.
-    """
-    # Konverter x til en 2D-array hvis den ikke allerede er det
-    x = np.array(x).reshape(-1, 1)
-    y = np.array(y)
+    if df.empty:
+        print("Ingen data etter 2014.")
+        return
 
-    # Opprett og tren regresjonsmodellen
-    model = LinearRegression()
-    model.fit(x, y)
+    # --- XGBoost-prediksjon ---
+    df_pred = df.set_index('referenceTime').asfreq('D')
+    df_pred = df_pred.ffill()
+    df_pred = df_pred.reset_index()
+    df_pred['days'] = (df_pred['referenceTime'] - df_pred['referenceTime'].min()).dt.days
+    df_pred['dayofyear'] = df_pred['referenceTime'].dt.dayofyear
+    X = df_pred[['days', 'dayofyear']]
+    y = df_pred['value']
 
-    # Prediksjon basert på input x
-    y_pred = model.predict(x)
+    model = xgb.XGBRegressor(n_estimators=100)
+    model.fit(X, y)
 
-    # Opprett scatterplot og trendlinje med Plotly
+    last_date = df_pred['referenceTime'].max()
+    future_dates = pd.date_range(start=last_date + timedelta(days=1), periods=5*365, freq='D')
+    future_days = (future_dates - df_pred['referenceTime'].min()).days.values
+    future_dayofyear = future_dates.dayofyear
+    X_future = pd.DataFrame({'days': future_days, 'dayofyear': future_dayofyear})
+    y_future_pred = model.predict(X_future)
+
+    # --- Lineær regresjonsanalyse ---
+    linreg = LinearRegression()
+    linreg.fit(df_pred[['days']], y)
+    all_days = np.concatenate([df_pred['days'].values, future_days])
+    all_dates = list(df_pred['referenceTime']) + list(future_dates)
+    y_trend_full = linreg.predict(all_days.reshape(-1, 1))
+
+    # --- Visualisering ---
     fig = go.Figure()
 
-    # Legg til scatterplot for de faktiske dataene
-    fig.add_trace(go.Scatter(x=x.flatten(), y=y, mode='markers', name='Data'))
+    # Historiske data
+    fig.add_trace(go.Scatter(x=df_pred['referenceTime'], y=y, mode='lines', name='Historisk'))
 
-    # Legg til trendlinje
-    fig.add_trace(go.Scatter(x=x.flatten(), y=y_pred, mode='lines', name='Trendlinje'))
+    # XGBoost-prediksjon
+    fig.add_trace(go.Scatter(x=future_dates, y=y_future_pred, mode='lines', name='Prediksjon (XGBoost)', line=dict(color='blue', dash='dot')))
 
-    # Tilpass layout
+    # Lineær regresjonslinje utvidet 5 år
+    fig.add_trace(go.Scatter(x=all_dates, y=y_trend_full, mode='lines', name='Trendlinje (regresjon)', line=dict(color='red')))
+
     fig.update_layout(
-        title="Regresjonsanalyse med Scatterplot og Trendlinje",
-        xaxis_title="Uavhengig variabel (x)",
-        yaxis_title="Avhengig variabel (y)",
-        template="plotly_white"
+        title='Blindern: Temperatur med prediksjon og trendlinje 5 år frem',
+        xaxis_title='Dato',
+        yaxis_title='Temperatur (°C)',
+        template='plotly_white'
     )
 
-    # Vis grafen
     fig.show()
 
-    return model, fig
+    # Slett midlertidig mappe hvis spesifisert
+    if temp_dir:
+        project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+        for root, dirs, _ in os.walk(project_root):
+            for d in dirs:
+                if d == temp_dir:
+                    temp_path = os.path.join(root, d)
+                    try:
+                        shutil.rmtree(temp_path)
+                        print(f"Slettet midlertidig mappe: {temp_path}")
+                    except Exception as e:
+                        print(f"Kunne ikke slette {temp_path}: {e}")
 
 if __name__ == "__main__":
-    # Slett mappen '__pycache__' etter kjøring hvis den finnes
-    vis_blindern_weather(temp_dir="__pycache__")
+    # Kjør funksjonen som lager XGBoost-prediksjon og trendlinje
+    vis_blindern_weather_with_extended_regression()
+
+    # Om du også har en annen funksjon, f.eks. vis_blindern_weather:
+    vis_blindern_weather()
+
+
