@@ -1,46 +1,55 @@
-# kode som tester:
-# interpolering mellom tall
-# Median fylling
-# Forward fill
-# Backward fill
-# ugyldig metode gir ValueError
-# andre kolonner blir ikke fylt
-
+import unittest
 import pandas as pd
 import numpy as np
+import sys
+import os
 
-def handle_missing_data(df, method='mean', numeric_only=True):
-    if numeric_only:
-        df_target = df.select_dtypes(include=[np.number])
-    else:
-        df_target = df
+# Legg til src-sti hvis funksjonen ligger der
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+from FeilOgMangler import handle_missing_data  # oppdater filnavn hvis nødvendig
 
-    if method == 'mean':
-        df_filled = df_target.interpolate(method='linear', limit_direction='both')
+class TestHandleMissingData(unittest.TestCase):
+    """
+    Tester funksjonen handle_missing_data for ulike strategier for utfylling av manglende verdier.
+    """
 
-    elif method == 'median':
-        if numeric_only:
-            df_filled = df_target.fillna(df_target.median())
-        else:
-            df_filled = df_target.copy()
-            numeric_cols = df_target.select_dtypes(include=[np.number]).columns
-            for col in numeric_cols:
-                median = df_target[col].median()
-                df_filled[col] = df_filled[col].fillna(median)
+    def setUp(self):
+        # Eksempeldata med manglende verdier
+        self.df = pd.DataFrame({
+            'temp': [10, np.nan, 12, np.nan, 14],
+            'city': ['A', 'B', 'C', 'D', 'E']
+        })
 
-    elif method == 'ffill':
-        df_filled = df_target.ffill()
+    def test_mean_interpolation(self):
+        """Tester lineær interpolasjon ('mean')"""
+        result = handle_missing_data(self.df.copy(), method='mean')
+        self.assertFalse(result['temp'].isnull().any())
 
-    elif method == 'bfill':
-        df_filled = df_target.bfill()
+    def test_median_fill(self):
+        """Tester median-utfylling"""
+        result = handle_missing_data(self.df.copy(), method='median')
+        median = self.df['temp'].median()
+        self.assertTrue((result['temp'] == median).sum() >= 1)
 
-    else:
-        raise ValueError("Ugyldig metode. Bruk 'mean', 'median', 'ffill' eller 'bfill'.")
+    def test_forward_fill(self):
+        """Tester forward fill (ffill)"""
+        result = handle_missing_data(self.df.copy(), method='ffill')
+        self.assertEqual(result['temp'].iloc[1], 10)
 
-    df.update(df_filled)
-    return df
+    def test_backward_fill(self):
+        """Tester backward fill (bfill)"""
+        result = handle_missing_data(self.df.copy(), method='bfill')
+        self.assertEqual(result['temp'].iloc[1], 12)
 
-# Eksempelbruk:
-# data = pd.DataFrame({'date': pd.date_range(start='2025-01-01', periods=10), 'temperature': [5, np.nan, 6, 7, np.nan, 8, 9, np.nan, 10, 11]})
-# cleaned_data = handle_missing_data(data, method='mean')
-# print(cleaned_data)
+    def test_invalid_method(self):
+        """Tester at ugyldig metode kaster ValueError"""
+        with self.assertRaises(ValueError):
+            handle_missing_data(self.df.copy(), method='ugyldig')
+
+    def test_non_numeric_not_filled(self):
+        """Tester at ikke-numeriske kolonner ikke blir fylt når numeric_only=True"""
+        result = handle_missing_data(self.df.copy(), method='mean', numeric_only=True)
+        self.assertTrue(result['city'].equals(self.df['city']))
+
+if __name__ == '__main__':
+    unittest.main()

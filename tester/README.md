@@ -32,6 +32,7 @@ Kort oppsummering:
 3. At uteliggeren 100.0 blir erstattet.
 4. At alle temperaturverdier etter rensing ligger innenfor et fornuftig område (her: −50 °C til 60 °C).
 5. At gjennomsnittsverdien fra ikke-manglende data brukes som erstatning (f.eks. 11.0 i testdataene).
+6. At testfilene ryddes opp etter bruk 
 
 
 #### `unittestFeilOgMangler.py` 
@@ -44,7 +45,7 @@ Kort oppsummering:
 3. Forward fill (ffill) 
 4. Backward fill (bfill)
 5. Ugyldig metode gir ValueError
-6. Andre kolonner blir ikke fylt
+6. Sikre at ikke- numeriske kolonner ikke endres ved numeric_only = True
 
 #### `unittestFindOutliers.py` 
 
@@ -55,8 +56,9 @@ Kort oppsummering:
 2. At den returnerer None når ingen verdier er uteliggere.
 3. At den hopper over None-verdier i datasettet uten å krasje.
 4. At resultatet er en NumPy-array, som forventet fra funksjonen.
+5. At testfilene ryddes opp etter bruk 
 
-#### `unittestFrostAPI.py`
+#### `unittestFrostBlindern.py`
 
 Denne unittest-filen tester funksjonen hent_og_lagre_data() (fra FrostBlindern.py i src-mappen), som henter værdata fra Frost API og lagrer dem som JSON. Testene bruker unittest.mock for å simulere API-respons – noe som gjør dem både raske og uavhengige av internettforbindelse eller faktisk API-nøkkel.
 
