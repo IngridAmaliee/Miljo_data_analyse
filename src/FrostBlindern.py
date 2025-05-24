@@ -84,8 +84,8 @@ def hent_og_lagre_data():
 
     print(f"Data saved to '{json_file_path}'")
 
-    return json_data  # gjør det lettere å teste
+    return json_data
 
 # Kjør kun når filen kjøres direkte, ikke ved import
-if __name__ == "__main__":
-    hent_og_lagre_data()
+#if __name__ == "__main__":
+#    hent_og_lagre_data()
