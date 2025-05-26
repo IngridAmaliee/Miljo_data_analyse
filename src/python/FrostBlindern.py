@@ -62,9 +62,9 @@ def hent_og_lagre_data(output_path=None):
 
     df.reset_index(drop=True, inplace=True)
 
-    # Lagre JSON
+    # Lagre JSON i data/json-mappen
     project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-    data_dir = os.path.join(project_root, 'data')
+    data_dir = os.path.join(project_root, '..','data', 'json')
     os.makedirs(data_dir, exist_ok=True)
 
     json_file_path = output_path or os.path.join(data_dir, 'observations_data.json')
