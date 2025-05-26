@@ -71,10 +71,10 @@ def vis_london_prediksjon_5aar(json_fil="data/updated_london_weather.json"):
     X_future = pd.DataFrame({'tid': future_tid, 'month': future_months})
     future_preds = model.predict(X_future)
     fig_pred = go.Figure()
-    fig_pred.add_trace(go.Scatter(x=data_monthly['date'], y=data_monthly['mean_temp'], mode='lines', name='Historisk mean_temp'))
-    fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds, mode='lines', name='Predikert mean_temp (5 år, LightGBM)', line=dict(dash='dash')))
-    fig_pred.update_layout(title='Prediksjon av månedlig gjennomsnittstemperatur i London (neste 5 år, LightGBM)',
-                           xaxis_title='Dato', yaxis_title='Gjennomsnittstemperatur (mean_temp)')
+    fig_pred.add_trace(go.Scatter(x=data_monthly['date'], y=data_monthly['mean_temp'], mode='lines', name='Historisk'))
+    fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds, mode='lines', name='Prediksjon 5 år frem', line=dict(dash='dash')))
+    fig_pred.update_layout(title='London: Gjennomsnittstemperatur med prediksjon 5 år frem (LightGBM, månedlig)',
+                           xaxis_title='År', yaxis_title='Gjennomsnittstemperatur (°C)')
     fig_pred.show()
 
 if __name__ == "__main__":
