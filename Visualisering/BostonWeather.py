@@ -9,6 +9,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 from xgboost import XGBRegressor
+import os
 pio.renderers.default = "notebook"
 
 
@@ -21,10 +22,18 @@ def vis_boston_weather(csv_fil="data/bostonData2.csv"):
     ved hjelp av interaktive grafer.
 
     Parametre:
-    csv_fil (str): Filsti til CSV-filen med værdata.
+    csv_fil (str): Filsti til CSV-filen med værdata. Må være en eksisterende CSV-fil med kolonnene 'time', 'tavg', 'prcp', 'wspd'.
     """
+    # Parameterverifisering
+    if not isinstance(csv_fil, str):
+        raise TypeError("csv_fil må være en streng som peker til en CSV-fil.")
+    if not os.path.isfile(csv_fil):
+        raise FileNotFoundError(f"Filen '{csv_fil}' finnes ikke.")
     # Leser inn datafilen
     data = pd.read_csv(csv_fil)
+    required_cols = {'time', 'tavg', 'prcp', 'wspd'}
+    if not required_cols.issubset(data.columns):
+        raise ValueError(f"CSV-filen må inneholde kolonnene: {required_cols}")
     data['time'] = pd.to_datetime(data['time'])
     data.drop_duplicates(inplace=True)
     data = data[(data['time'].dt.year >= 2014)]
@@ -72,10 +81,17 @@ def boxplot_mnd_gjennomsnitt(csv_fil):
     måned fra 2014 og fremover. Gir innsikt i sesongvariasjon og spredning.
 
     Parametre:
-    csv_fil (str): Filsti til CSV-filen med værdata.
+    csv_fil (str): Filsti til CSV-filen med værdata. Må være en eksisterende CSV-fil med kolonnene 'time', 'tavg'.
     """
-    # Leser inn datafilen og konverterer dato
+    # Parameterverifisering
+    if not isinstance(csv_fil, str):
+        raise TypeError("csv_fil må være en streng som peker til en CSV-fil.")
+    if not os.path.isfile(csv_fil):
+        raise FileNotFoundError(f"Filen '{csv_fil}' finnes ikke.")
     data = pd.read_csv(csv_fil)
+    required_cols = {'time', 'tavg'}
+    if not required_cols.issubset(data.columns):
+        raise ValueError(f"CSV-filen må inneholde kolonnene: {required_cols}")
     data['time'] = pd.to_datetime(data['time'])
     data.drop_duplicates(inplace=True)
     data = data[data['time'].dt.year >= 2014]
@@ -102,7 +118,22 @@ def boxplot_mnd_gjennomsnitt(csv_fil):
 
 
 def vis_boston_prediksjon_5aar(csv_fil="data/bostonData2.csv"):
+    """
+    Predikerer gjennomsnittstemperatur i Boston 5 år frem i tid (60 måneder)
+    med XGBoost og måned som feature, og visualiserer resultatet.
+
+    Parametre:
+    csv_fil (str): Filsti til CSV-filen med værdata. Må være en eksisterende CSV-fil med kolonnene 'time', 'tavg'.
+    """
+    # Parameterverifisering
+    if not isinstance(csv_fil, str):
+        raise TypeError("csv_fil må være en streng som peker til en CSV-fil.")
+    if not os.path.isfile(csv_fil):
+        raise FileNotFoundError(f"Filen '{csv_fil}' finnes ikke.")
     data = pd.read_csv(csv_fil)
+    required_cols = {'time', 'tavg'}
+    if not required_cols.issubset(data.columns):
+        raise ValueError(f"CSV-filen må inneholde kolonnene: {required_cols}")
     data['time'] = pd.to_datetime(data['time'])
     data = data[(data['time'].dt.year >= 2014)]
     data.fillna(data.mean(numeric_only=True), inplace=True)
