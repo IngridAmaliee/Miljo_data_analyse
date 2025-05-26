@@ -6,7 +6,7 @@ import sys
 from requests.exceptions import RequestException
 
 # Legg til src-mappen i import-søkestien
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'python')))
 import FrostBlindern
 
 class TestFrostAPI(unittest.TestCase):

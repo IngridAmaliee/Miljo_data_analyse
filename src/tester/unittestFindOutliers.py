@@ -5,7 +5,7 @@ import numpy as np
 import sys
 
 # Sørg for at src-mappen er tilgjengelig for import
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'python')))
 from find_outliers import find_outliers_in_weather_data  # Filnavn og funksjon må være korrekt
 
 class TestFindOutliers(unittest.TestCase):

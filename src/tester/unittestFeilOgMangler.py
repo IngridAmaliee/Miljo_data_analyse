@@ -5,7 +5,7 @@ import sys
 import os
 
 # Legg til src-mappen i sys.path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'python')))
 
 # Importér funksjonen du tester – oppdater filnavn ved behov
 from FeilOgMangler import handle_missing_data  # <-- Endre dette til riktig modulnavn om nødvendig

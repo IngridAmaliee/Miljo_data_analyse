@@ -5,7 +5,7 @@ import pandas as pd
 import sys
 
 # Legg til src-mappen i importstien slik at vi kan importere funksjonene som skal testes
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'python')))
 from clean_weather_data import load_json_to_dataframe, clean_weather_dataframe
 
 class TestCleanWeatherData(unittest.TestCase):
