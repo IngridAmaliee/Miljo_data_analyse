@@ -127,12 +127,12 @@ def vis_boston_prediksjon_5aar(csv_fil="data/bostonData2.csv"):
     # Visualisering av historisk og predikert temperatur
     fig_pred = go.Figure()
     fig_pred.add_trace(go.Scatter(x=monthly['time'], y=monthly['tavg'],
-                                  mode='lines', name='Historisk tavg'))
+                                  mode='lines', name='Historisk'))
     fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds,
-                                  mode='lines', name='Predikert tavg (5 år, XGBoost)',
+                                  mode='lines', name='Prediksjon 5 år frem',
                                   line=dict(dash='dash')))
-    fig_pred.update_layout(title='Prediksjon av gjennomsnittstemperatur i Boston (neste 5 år, XGBoost, månedlig)',
-                           xaxis_title='Dato', yaxis_title='Gjennomsnittstemperatur (tavg)')
+    fig_pred.update_layout(title='Boston: Gjennomsnittstemperatur med prediksjon 5 år frem (XGBoost, månedlig)',
+                           xaxis_title='År', yaxis_title='Gjennomsnittstemperatur (°C)')
     fig_pred.show()
 
 
@@ -189,7 +189,7 @@ def regresjonsanalyse_boston(csv_fil):
     # Visualiserer historisk tavg, historisk snitt og prediksjon
     fig_linreg = go.Figure()
     fig_linreg.add_trace(go.Scatter(
-        x=monthly['time'], y=y, mode='lines', name='Historisk tavg'
+        x=monthly['time'], y=y, mode='lines', name='Historisk'
     ))
     fig_linreg.add_trace(go.Scatter(
         x=[monthly['time'].min(), siste_dato],
@@ -200,14 +200,13 @@ def regresjonsanalyse_boston(csv_fil):
     ))
     fig_linreg.add_trace(go.Scatter(
         x=future_dates, y=y_future_pred, mode='lines',
-        name='Predikert tavg (Lineær regresjon)',
+        name='Prediksjon gjennomsnitt 5 år frem',
         line=dict(color='red', dash='dot')
     ))
     fig_linreg.update_layout(
-        title='Lineær regresjonsanalyse: Temperatur i Boston '
-              '(fra 2023 + 5 år frem)',
-        xaxis_title='Dato',
-        yaxis_title='Gjennomsnittstemperatur (tavg)'
+        title='Boston: Gjennomsnittstemperatur med prediksjon 5 år frem (Lineær regresjon, månedlig)',
+        xaxis_title='År',
+        yaxis_title='Gjennomsnittstemperatur (°C)'
     )
     fig_linreg.show()
 
