@@ -59,8 +59,8 @@ def vis_blindern_prediksjon_5aar(json_fil="data/observations_data.json"):
             fig_pred = go.Figure()
             fig_pred.add_trace(go.Scatter(x=df_pred['referenceTime'], y=y, mode='lines', name='Historisk'))
             fig_pred.add_trace(go.Scatter(x=future_dates, y=y_pred, mode='lines', name='Prediksjon 5 år frem'))
-            fig_pred.update_layout(title='Blindern: Temperatur med prediksjon 5 år frem (XGBoost, sesong)',
-                                  xaxis_title='Dato', yaxis_title='Temperatur (°C)')
+            fig_pred.update_layout(title='Blindern: Gjennomsnittstemperatur med prediksjon 5 år frem (XGBoost, månedlig)',
+                                  xaxis_title='År', yaxis_title='Gjennomsnittstemperatur (°C)')
             fig_pred.show()
     else:
         print("Ingen temperaturdata funnet i observations_data.json.")
