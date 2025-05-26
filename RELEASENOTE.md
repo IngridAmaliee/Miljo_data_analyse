@@ -47,10 +47,11 @@ Dette er første offisielle versjon v prosjektet *Miljødataanalyse*, utviklet s
 ---
 
 ## Neste steg (forslag til videreutvikling)
-*  Legge til flere geografiske omrpder og datakilder. 
+*  Legge til flere geografiske områder og datakilder. 
 *  Utvide prediksjonsmodellen med sesong- og klimavariabler 
-*  Bedre forntend for ikke- tekniske brukere 
+*  Bedre frontend for ikke- tekniske brukere 
 *  CI/CD for automatisk testkjøring ved nye commits. 
+*  Forandring av navn --> bytte fra camelcase til fullstendig PEP8 standard med underscore. 
 
 ---
 
