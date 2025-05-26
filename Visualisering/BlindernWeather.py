@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 's
 from FinnerTemp import HentTemp
 import plotly.express as px
 import plotly.io as pio
-pio.renderers.default = "browser"
+pio.renderers.default = "notebook"
 import pandas as pd
 import xgboost as xgb
 from pandas.tseries.frequencies import to_offset
@@ -42,7 +42,7 @@ def vis_blindern_prediksjon_5aar(json_fil="data/observations_data.json"):
             print("Ingen temperaturdata fra og med 2014.")
         else:
             df_pred = df.set_index('referenceTime').asfreq('D')
-            df_pred = df_pred.fillna(method='ffill')
+            df_pred = df_pred.ffill()
             df_pred = df_pred.reset_index()
             df_pred['days'] = (df_pred['referenceTime'] - df_pred['referenceTime'].min()).dt.days
             df_pred['dayofyear'] = df_pred['referenceTime'].dt.dayofyear
@@ -59,8 +59,8 @@ def vis_blindern_prediksjon_5aar(json_fil="data/observations_data.json"):
             fig_pred = go.Figure()
             fig_pred.add_trace(go.Scatter(x=df_pred['referenceTime'], y=y, mode='lines', name='Historisk'))
             fig_pred.add_trace(go.Scatter(x=future_dates, y=y_pred, mode='lines', name='Prediksjon 5 år frem'))
-            fig_pred.update_layout(title='Blindern: Temperatur med prediksjon 5 år frem (XGBoost, sesong)',
-                                  xaxis_title='Dato', yaxis_title='Temperatur (°C)')
+            fig_pred.update_layout(title='Blindern: Gjennomsnittstemperatur med prediksjon 5 år frem (XGBoost, månedlig)',
+                                  xaxis_title='År', yaxis_title='Gjennomsnittstemperatur (°C)')
             fig_pred.show()
     else:
         print("Ingen temperaturdata funnet i observations_data.json.")

@@ -2,12 +2,12 @@ import pandas as pd
 import plotly.express as px
 import plotly.io as pio
 import numpy as np
+import lightgbm as lgb
 from lightgbm import LGBMRegressor
 import plotly.graph_objects as go
+pio.renderers.default = "notebook"
 
-pio.renderers.default = "browser"
-
-def vis_london_temp(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_london_weather.json"):
+def vis_london_temp(json_fil="data/updated_london_weather.json"):
     # Les inn JSON-filen som en liste av dicts
     data = pd.read_json(json_fil)
     
@@ -52,7 +52,7 @@ def vis_london_temp(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_lon
     )
     fig4.show()
 
-def vis_london_prediksjon_5aar(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_london_weather.json"):
+def vis_london_prediksjon_5aar(json_fil="data/updated_london_weather.json"):
     data = pd.read_json(json_fil)
     data = data[data['date'] >= 20140101].copy()
     data['date'] = pd.to_datetime(data['date'].astype(str), format='%Y%m%d', errors='coerce')
@@ -62,7 +62,7 @@ def vis_london_prediksjon_5aar(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\
     data_monthly['month'] = data_monthly['date'].dt.month
     X = data_monthly[['tid', 'month']]
     y = data_monthly['mean_temp']
-    model = LGBMRegressor(n_estimators=200)
+    model = lgb.LGBMRegressor(verbose=-1, n_estimators=200)
     model.fit(X, y)
     future_tid = np.arange(len(data_monthly), len(data_monthly) + 60)
     last_date = data_monthly['date'].iloc[-1]
@@ -71,10 +71,10 @@ def vis_london_prediksjon_5aar(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\
     X_future = pd.DataFrame({'tid': future_tid, 'month': future_months})
     future_preds = model.predict(X_future)
     fig_pred = go.Figure()
-    fig_pred.add_trace(go.Scatter(x=data_monthly['date'], y=data_monthly['mean_temp'], mode='lines', name='Historisk mean_temp'))
-    fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds, mode='lines', name='Predikert mean_temp (5 år, LightGBM)', line=dict(dash='dash')))
-    fig_pred.update_layout(title='Prediksjon av månedlig gjennomsnittstemperatur i London (neste 5 år, LightGBM)',
-                           xaxis_title='Dato', yaxis_title='Gjennomsnittstemperatur (mean_temp)')
+    fig_pred.add_trace(go.Scatter(x=data_monthly['date'], y=data_monthly['mean_temp'], mode='lines', name='Historisk'))
+    fig_pred.add_trace(go.Scatter(x=future_dates, y=future_preds, mode='lines', name='Prediksjon 5 år frem', line=dict(dash='dash')))
+    fig_pred.update_layout(title='London: Gjennomsnittstemperatur med prediksjon 5 år frem (LightGBM, månedlig)',
+                           xaxis_title='År', yaxis_title='Gjennomsnittstemperatur (°C)')
     fig_pred.show()
 
 if __name__ == "__main__":
