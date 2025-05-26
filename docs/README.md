@@ -17,6 +17,10 @@ Vurderingskriterier er brutt ned og svart på i følgende filer. Disse dekker re
   - Dataanalyse
 - Vurderingskriterier5.md
   - Visualisering
+- Vurderingskriterier6.md
+  - Prediktiv analyse
+- Vurderingskriterie7.md 
+  - Refleksjonsnotat
 
 
 
