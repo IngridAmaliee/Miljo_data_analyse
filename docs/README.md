@@ -9,18 +9,6 @@ Signert erklæring som dokumenterer bruk av kunstig intelligens i prosjektet. I 
 
 ### Vurderingskriterier
 Vurderingskriterier er brutt ned og svart på i følgende filer. Disse dekker refleksjonsspørsmål og dokumentasjon som underbygger karaktergrunnlaget i mappe 1 og 2:
-- Vurderingskriterier2.md
-  - Datainnsamling
-- Vurderingskriterier3.md
-  - Databehandling
-- Vurderingskriterier4.md
-  - Dataanalyse
-- Vurderingskriterier5.md
-  - Visualisering
-- Vurderingskriterier6.md
-  - Prediktiv analyse
-- Vurderingskriterie7.md 
-  - Refleksjonsnotat
 
 
 
@@ -30,6 +18,8 @@ Vurderingskriterier er brutt ned og svart på i følgende filer. Disse dekker re
 | `Vurderingskriterier3.md` | Databehandling og håndtering av mangler     |
 | `Vurderingskriterier4.md` | Dataanalyse                                 |
 | `Vurderingskriterier5.md` | Visualisering                               |
+| `Vurderingskriterier6.md` | Predektiv analyse                           |
+| `Vurderingskriterier7.md` | Refleksjonsnotat                            |
 
 ---
 Disse dokumentene er skrevet for å støtte vurdering og gjenspeiler teamets refleksjoner og valg gjennom hele utviklingsløpet.
