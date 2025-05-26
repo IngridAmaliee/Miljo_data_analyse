@@ -49,7 +49,7 @@ def hent_boston_data_csv(filnavn='BostonData2.csv', start_aar=2013, slutt_aar=20
     # --- Lagre til data-mappen ---
     try:
         project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-        data_dir = os.path.join(project_root, 'data')
+        data_dir = os.path.join(project_root, '..','data', 'csv')
         os.makedirs(data_dir, exist_ok=True)
 
         filsti = os.path.join(data_dir, filnavn)
