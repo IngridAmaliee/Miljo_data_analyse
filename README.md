@@ -49,7 +49,7 @@ Til slutt har vi utviklet programmer for prediksjon, visualisering og analyse, i
 1. Klon prosjektet fra GitHub:
 
 ```bash
-git clone https://github.com/brukernavn/Miljo_data_analyse.git
+git clone https://github.com/IngridAmaliee/Miljo_data_analyse.git
 cd Miljo_data_analyse
 ```
 
