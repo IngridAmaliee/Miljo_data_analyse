@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 's
 from FinnerTemp import HentTemp
 import plotly.express as px
 import plotly.io as pio
-pio.renderers.default = "browser"
+pio.renderers.default = "notebook"
 import pandas as pd
 import xgboost as xgb
 from pandas.tseries.frequencies import to_offset
@@ -42,7 +42,7 @@ def vis_blindern_prediksjon_5aar(json_fil="data/observations_data.json"):
             print("Ingen temperaturdata fra og med 2014.")
         else:
             df_pred = df.set_index('referenceTime').asfreq('D')
-            df_pred = df_pred.fillna(method='ffill')
+            df_pred = df_pred.ffill()
             df_pred = df_pred.reset_index()
             df_pred['days'] = (df_pred['referenceTime'] - df_pred['referenceTime'].min()).dt.days
             df_pred['dayofyear'] = df_pred['referenceTime'].dt.dayofyear
