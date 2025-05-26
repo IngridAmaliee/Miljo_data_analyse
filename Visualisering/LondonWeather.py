@@ -2,12 +2,12 @@ import pandas as pd
 import plotly.express as px
 import plotly.io as pio
 import numpy as np
+import lightgbm as lgb
 from lightgbm import LGBMRegressor
 import plotly.graph_objects as go
+pio.renderers.default = "notebook"
 
-pio.renderers.default = "browser"
-
-def vis_london_temp(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_london_weather.json"):
+def vis_london_temp(json_fil="data/updated_london_weather.json"):
     # Les inn JSON-filen som en liste av dicts
     data = pd.read_json(json_fil)
     
@@ -52,7 +52,7 @@ def vis_london_temp(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_lon
     )
     fig4.show()
 
-def vis_london_prediksjon_5aar(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\updated_london_weather.json"):
+def vis_london_prediksjon_5aar(json_fil="data/updated_london_weather.json"):
     data = pd.read_json(json_fil)
     data = data[data['date'] >= 20140101].copy()
     data['date'] = pd.to_datetime(data['date'].astype(str), format='%Y%m%d', errors='coerce')
@@ -62,7 +62,7 @@ def vis_london_prediksjon_5aar(json_fil=r"C:\anvendt_prog\Anvendt_prosjekt\data\
     data_monthly['month'] = data_monthly['date'].dt.month
     X = data_monthly[['tid', 'month']]
     y = data_monthly['mean_temp']
-    model = LGBMRegressor(n_estimators=200)
+    model = lgb.LGBMRegressor(verbose=-1, n_estimators=200)
     model.fit(X, y)
     future_tid = np.arange(len(data_monthly), len(data_monthly) + 60)
     last_date = data_monthly['date'].iloc[-1]
