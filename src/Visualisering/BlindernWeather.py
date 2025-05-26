@@ -1,7 +1,7 @@
 import sys
 import os
 import shutil
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'python')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'python')))
 from FinnerTemp import HentTemp
 import plotly.express as px
 import plotly.io as pio
@@ -13,7 +13,7 @@ import numpy as np
 import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
 
-def vis_blindern_weather(json_fil="data/observations_data.json", temp_dir=None):
+def vis_blindern_weather(json_fil="data/json/observations_data.json", temp_dir=None):
     """
     Leser inn temperaturdata fra en JSON-fil og visualiserer den historiske utviklingen
     i gjennomsnittstemperatur fra Blindern værstasjon fra og med 2014.
@@ -22,6 +22,10 @@ def vis_blindern_weather(json_fil="data/observations_data.json", temp_dir=None):
         json_fil (str): Filsti til JSON-filen med observasjonsdata.
         temp_dir (str): (Ubrukt) Parameter for midlertidig katalog, standard None.
     """
+    if not os.path.exists(json_fil):
+        print(f"Filen finnes ikke: {json_fil}")
+        return
+
     hent_temp = HentTemp()
     results = hent_temp.get_mean_air_temperature_and_reference_time(json_fil)
     if results and len(results) > 0:
@@ -40,7 +44,7 @@ def vis_blindern_weather(json_fil="data/observations_data.json", temp_dir=None):
     else:
         print("Ingen temperaturdata funnet i observations_data.json.")
 
-def vis_blindern_prediksjon_5aar(json_fil="data/observations_data.json"):
+def vis_blindern_prediksjon_5aar(json_fil="data/json/observations_data.json"):
     """
     Leser inn historiske temperaturdata og bruker XGBoost til å predikere
     gjennomsnittstemperatur i Blindern fem år frem i tid basert på sesong- og trendvariabler.
@@ -48,6 +52,10 @@ def vis_blindern_prediksjon_5aar(json_fil="data/observations_data.json"):
     Parametere:
         json_fil (str): Filsti til JSON-filen med observasjonsdata.
     """
+    if not os.path.exists(json_fil):
+        print(f"Filen finnes ikke: {json_fil}")
+        return
+
     hent_temp = HentTemp()
     results = hent_temp.get_mean_air_temperature_and_reference_time(json_fil)
     if results and len(results) > 0:
