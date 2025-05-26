@@ -5,17 +5,24 @@ import numpy as np
 import lightgbm as lgb
 from lightgbm import LGBMRegressor
 import plotly.graph_objects as go
+import os
 pio.renderers.default = "notebook"
 
 def vis_london_temp(json_fil="data/updated_london_weather.json"):
-    # Les inn JSON-filen som en liste av dicts
+    """
+    Leser inn værdata fra London og visualiserer temperaturfordeling og månedlig gjennomsnitt.
+    Parametre:
+    json_fil (str): Filsti til JSON-filen med værdata. Må være en eksisterende fil med kolonnene 'min_temp', 'mean_temp', 'max_temp', 'date'.
+    """
+    # Parameterverifisering
+    if not isinstance(json_fil, str):
+        raise TypeError("json_fil må være en streng som peker til en JSON-fil.")
+    if not os.path.isfile(json_fil):
+        raise FileNotFoundError(f"Filen '{json_fil}' finnes ikke.")
     data = pd.read_json(json_fil)
-    
-    # Sjekk at nødvendige kolonner finnes
-    for col in ['min_temp', 'mean_temp', 'max_temp', 'date']:
-        if col not in data.columns:
-            print(f"Advarsel: '{col}' finnes ikke i datasettet.")
-            return
+    required_cols = {'min_temp', 'mean_temp', 'max_temp', 'date'}
+    if not required_cols.issubset(data.columns):
+        raise ValueError(f"JSON-filen må inneholde kolonnene: {required_cols}")
 
     # Filtrer på dato >= 20140101
     data = data[data['date'] >= 20140101].copy()
@@ -53,7 +60,22 @@ def vis_london_temp(json_fil="data/updated_london_weather.json"):
     fig4.show()
 
 def vis_london_prediksjon_5aar(json_fil="data/updated_london_weather.json"):
+    """
+    Predikerer månedlig gjennomsnittstemperatur i London 5 år frem i tid (60 måneder)
+    med LightGBM og måned som feature, og visualiserer resultatet.
+    Parametre:
+    json_fil (str): Filsti til JSON-filen med værdata. Må være en eksisterende fil med kolonnene 'date', 'mean_temp'.
+    """
+    # Parameterverifisering
+    if not isinstance(json_fil, str):
+        raise TypeError("json_fil må være en streng som peker til en JSON-fil.")
+    if not os.path.isfile(json_fil):
+        raise FileNotFoundError(f"Filen '{json_fil}' finnes ikke.")
     data = pd.read_json(json_fil)
+    required_cols = {'date', 'mean_temp'}
+    if not required_cols.issubset(data.columns):
+        raise ValueError(f"JSON-filen må inneholde kolonnene: {required_cols}")
+
     data = data[data['date'] >= 20140101].copy()
     data['date'] = pd.to_datetime(data['date'].astype(str), format='%Y%m%d', errors='coerce')
     data = data.dropna(subset=['date'])
