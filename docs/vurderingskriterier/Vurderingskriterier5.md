@@ -38,7 +38,7 @@ Nyttige funksjoner:
 - Disse verktøyene gjør det lettere å kommunisere funn og oppdage skjulte trender.
 
 ## 3. Hvordan vil du håndtere og visualisere manglende data i grafene dine for å sikre at de fortsatt er informative?
-I clean_weather_data.py håndterer vi manglende verdier eksplisitt:
+I cleanWeatherData.py håndterer vi manglende verdier eksplisitt:
 
 - Numeriske mangler fylles med gjennomsnitt (unntak: snow_depth, som får verdi 0 i sommermånedene).
 - Uteliggere erstattes med gjennomsnitt eller filtreres ut før visualisering.
@@ -97,8 +97,7 @@ show(p)
 Effektiviteten evalueres gjennom:
 
 - Lesbarhet og design: Klar tittel, forklarende akser, tydelige farger
-- Fanget innsikt: Fanger visualiseringene trender, uteliggere og sesongmønstre?
+- Fanger innsikt: Fanger visualiseringene trender, uteliggere og sesongmønstre?
 - Respons fra medstudenter og veileder: Vi har justert visualiseringer basert på tilbakemeldinger
 - Bruk av interaktive elementer: Lar brukeren selv utforske dataene (spesielt viktig i Jupyter og presentasjoner)
 - Refleksjonsnotatet: Diskuterer hva som fungerte og hva som kan forbedres
-- Dette gir et helhetlig bilde av hvordan visualiseringene støtter analysen og formidlingen av innsikt.

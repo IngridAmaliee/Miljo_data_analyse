@@ -85,7 +85,7 @@ API_KEY_FROST=din_nøkkel_her
 2. Opprett en konto (gratis)
 3. Når kontoen er opprettet, finner du API-nøkkelen din under «My API keys»
 4. Kopier nøkkelen og legg den inn i `.env`-filen din:
-5. 
+   
 ## Kjør applikasjonen
 
 Kjør denne for å hente og lagre data fra frost API:

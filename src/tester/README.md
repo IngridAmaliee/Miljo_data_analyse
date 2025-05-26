@@ -24,7 +24,7 @@ Testene:
 
 #### `unittestCleanWeatherData.py`
 
-Denne testen tester renselogikken i clean_weather_data.py, og fokuserer på håndtering av manglende verdier og uteliggere.
+Denne testen tester renselogikken i cleanWeatherData.py, og fokuserer på håndtering av manglende verdier og uteliggere.
 
 Kort oppsummering:
 1. At funksjonene fungerer som forventet og returnerer en renset DataFrame.

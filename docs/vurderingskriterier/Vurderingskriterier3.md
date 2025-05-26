@@ -14,7 +14,7 @@ df.fillna(df.mean())  # fyll inn med kolonnegjennomsnitt
 
 Et praktisk eksempel er hvis vi mangler temperaturdata for noen dager – da kan vi fylle inn med gjennomsnittstemperaturen for dagene før og etter.
 
-## 2. EKan du gi et eksempel på hvordan du vil bruke list comprehensions for å manipulere dataene?
+## 2. Kan du gi et eksempel på hvordan du vil bruke list comprehensions for å manipulere dataene?
 Vi tar utgangspunkt i en liste med temperaturdata i Celsius. Vi vil konvertere disse til Fahrenheit og erstatte None-verdier med gjennomsnittstemperaturen:
 ```python
 temperatures_celsius = [10, 15, 20, 25, None, 30]
