@@ -107,7 +107,7 @@ if __name__ == "__main__":
     hent_temp = HentTemp()
 
     # Test 1 – CSV
-    csv_file_path = "data/bostonData2.csv"
+    csv_file_path = "data/csv/bostonData2.csv"
     print(f"\n🔍 Leser temperaturdata fra CSV: {csv_file_path}")
     tmin_tmax_tavg = hent_temp.get_min_max_temperature(csv_file_path)
     if tmin_tmax_tavg is not None:
@@ -117,7 +117,7 @@ if __name__ == "__main__":
         print("Fant ikke gyldige CSV-data.")
 
     # Test 2 – Temperaturer fra JSON
-    json_file_path = "data/updated_london_weather.json"
+    json_file_path = "data/json/updated_london_weather.json"
     print(f"\nLeser temperaturer fra JSON: {json_file_path}")
     temperatures = hent_temp.get_temperatures_from_json(json_file_path)
     if temperatures is not None:
@@ -127,7 +127,7 @@ if __name__ == "__main__":
         print("Fant ikke gyldige temperaturer i JSON.")
 
     # Test 3 – Observasjoner
-    observations_file_path = "data/observations_data.json"
+    observations_file_path = "data/json/observations_data.json"
     print(f"\nLeser observasjoner fra: {observations_file_path}")
     results = hent_temp.get_mean_air_temperature_and_reference_time(observations_file_path)
     if results:
