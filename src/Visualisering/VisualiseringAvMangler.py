@@ -47,7 +47,7 @@ def visualiser_og_analyser_mangler(data_path=None):
     result = psql.sqldf(query, locals())
     print('Oversikt over mangler:')
     print(result)
-
+'''
 if __name__ == "__main__":
     # Kjør funksjonen på både updated_london_weather.json og london_weather.json
     import os
@@ -60,3 +60,4 @@ if __name__ == "__main__":
         print(f"\n--- Visualiserer mangler for: {os.path.basename(data_path)} ---")
         visualiser_og_analyser_mangler(data_path)
 
+'''
