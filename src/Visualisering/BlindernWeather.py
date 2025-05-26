@@ -1,7 +1,7 @@
 import sys
 import os
 import shutil
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src', 'python')))
 from FinnerTemp import HentTemp
 import plotly.express as px
 import plotly.io as pio
