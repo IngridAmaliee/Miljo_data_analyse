@@ -38,7 +38,7 @@ def csv_til_json_london(csv_file="london_weather.csv", json_file="london_weather
 
 if __name__ == "__main__":
     try:
-        success = csv_til_json_london("data/london_weather.csv", "data/london_weather.json")
+        success = csv_til_json_london("data/csv/london_weather.csv", "data/json/london_weather.json")
         if success:
             print("JSON-fil er klar for bruk.")
         else:
