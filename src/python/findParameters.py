@@ -60,7 +60,7 @@ def get_frost_observations(client_id, source_id, elements, referencetime):
         response.raise_for_status()
         return response.json().get('data', [])
     except requests.exceptions.RequestException as e:
-        print(f"❌ Feil ved henting av observasjoner: {e}")
+        print(f" Feil ved henting av observasjoner: {e}")
         return []
 
 def print_sources(sources):

@@ -89,9 +89,9 @@ class HentTemp:
                                     "value": value
                                 })
                             else:
-                                print(f"⚠️ Advarsel: 'value' mangler i observasjonen: {obs}")
+                                print(f"Advarsel: 'value' mangler i observasjonen: {obs}")
                 else:
-                    print(f"⚠️ Advarsel: Manglende 'referenceTime' eller 'observations' i oppføringen.")
+                    print(f"Advarsel: Manglende 'referenceTime' eller 'observations' i oppføringen.")
 
             return results
 
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 
     # Test 1 – CSV
     csv_file_path = "data/csv/bostonData2.csv"
-    print(f"\n🔍 Leser temperaturdata fra CSV: {csv_file_path}")
+    print(f"\nLeser temperaturdata fra CSV: {csv_file_path}")
     tmin_tmax_tavg = hent_temp.get_min_max_temperature(csv_file_path)
     if tmin_tmax_tavg is not None:
         print("CSV-data funnet:")

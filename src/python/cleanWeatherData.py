@@ -134,8 +134,8 @@ def save_dataframe_to_json(df, output_file):
 
 # Eksempel på bruk
 if __name__ == "__main__":
-    file_path = "data/london_weather.json"
-    output_path = "data/updated_london_weather.json"
+    file_path = "data/json/london_weather.json"
+    output_path = "data/json/updated_london_weather.json"
     columns = ['cloud_cover', 'sunshine', 'global_radiation', 'max_temp', 'mean_temp',
                'min_temp', 'precipitation', 'pressure', "snow_depth"]
     bounds = {
