@@ -58,7 +58,7 @@ def hent_og_lagre_data(output_path=None):
             row['sourceId'] = item['sourceId']
             df = pd.concat([df, row], ignore_index=True)
         else:
-            print(f"⚠️ Advarsel: Manglende felt i datapunkt {i}")
+            print(f"Advarsel: Manglende felt i datapunkt {i}")
 
     df.reset_index(drop=True, inplace=True)
 

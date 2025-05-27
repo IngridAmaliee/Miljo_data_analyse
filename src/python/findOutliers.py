@@ -63,7 +63,7 @@ def find_outliers_in_weather_data(file_path, data_key='max_temp', lower_limit=-5
         return None
 
 if __name__ == "__main__":
-    file_path = "data/london_weather.json"
+    file_path = "data/json/london_weather.json"
     
     for key in ['max_temp', 'min_temp']:
         outliers = find_outliers_in_weather_data(file_path, data_key=key)
