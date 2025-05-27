@@ -59,7 +59,7 @@ def vis_london_temp(json_fil="../data/json/updated_london_weather.json"):
     )
     fig4.show()
 
-def vis_london_prediksjon_5aar(json_fil="data/updated_london_weather.json"):
+def vis_london_prediksjon_5aar(json_fil="data/json/updated_london_weather.json"):
     """
     Predikerer månedlig gjennomsnittstemperatur i London 5 år frem i tid (60 måneder)
     med LightGBM og måned som feature, og visualiserer resultatet.
