@@ -117,7 +117,7 @@ def boxplot_mnd_gjennomsnitt(csv_fil):
 
 
 
-def vis_boston_prediksjon_5aar(csv_fil="data/bostonData2.csv"):
+def vis_boston_prediksjon_5aar(csv_fil="data/csv/bostonData2.csv"):
     """
     Predikerer gjennomsnittstemperatur i Boston 5 år frem i tid (60 måneder)
     med XGBoost og måned som feature, og visualiserer resultatet.
