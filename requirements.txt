@@ -62,3 +62,7 @@ lightgbm==4.3.0
 xlrd==2.0.1
 XlsxWriter==3.2.0
 zipp==3.20.0
+nbformat>=4.2.0
+notebook>=7.0.0
+jupyterlab
+meteostat>=1.6.5
