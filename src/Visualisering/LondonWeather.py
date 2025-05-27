@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import os
 pio.renderers.default = "notebook"
 
-def vis_london_temp(json_fil="data/updated_london_weather.json"):
+def vis_london_temp(json_fil="../data/json/updated_london_weather.json"):
     """
     Leser inn værdata fra London og visualiserer temperaturfordeling og månedlig gjennomsnitt.
     Parametre:
